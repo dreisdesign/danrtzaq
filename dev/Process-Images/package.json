@@ -1,7 +1,0 @@
-{
-  "name": "process-images",
-  "version": "1.0.0",
-  "description": "Image processing script",
-  "type": "commonjs",
-  "main": "process-images.js"
-}
