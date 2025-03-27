@@ -1,0 +1,142 @@
+/* Base Styles
+ * Contains: CSS variables, reset, typography, basic elements
+ * Version: 2024-03-11-v1
+ */
+
+/* Root Variables */
+:root {
+  --highlight-1: #ffe1bb;
+  --lightblue: #495c7a;
+  --darkblue: #202f48;
+  --linkblue: #105cd7;
+}
+
+/* Font Loading Optimization */
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../fonts/SourceSans3VF.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  font-variation-settings: "wght" 200 900;
+}
+
+/* Box Sizing Reset */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 24px;
+  font-family: "Source Sans 3VF", sans-serif;
+  color: var(--darkblue);
+}
+
+/* Base text styles */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fafaf9;
+  font-family:
+    "Source Sans 3",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 350;
+  font-variation-settings: "wght" 350;
+  font-size: 1rem;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 0.95;
+  letter-spacing: -0.5px;
+  font-weight: 900 !important;
+  font-variation-settings: "wght" 900 !important;
+}
+
+h2 {
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  padding-bottom: 2px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+}
+
+/* Strong text and bold elements */
+strong,
+b {
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+}
+
+/* Paragraphs and Lists */
+p,
+li {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0 0 0.75rem 0;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+ol,
+ul {
+  padding-left: 2rem;
+  margin-left: 0;
+  list-style-position: inside;
+  line-height: 1.2;
+}
+
+li {
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  text-indent: -1.25rem;
+}
+
+/* Links */
+a,
+a:visited,
+p a:visited {
+  color: var(--darkblue);
+  text-decoration: none;
+  border-radius: 100px;
+}
+
+aside a,
+p a {
+  color: var(--linkblue);
+  text-decoration: underline;
+}
+
+/* Images */
+img {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+  min-height: 1px;
+}
+
+/* Basic elements */
+picture {
+  border-radius: 10px;
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main pages -->
+    <url>
+        <loc>https://danreisdesign.com/</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/about/</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- MikMak Portfolio -->
+    <url>
+        <loc>https://danreisdesign.com/portfolio/mikmak/platform-asset-flexibility/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/mikmak/responsive-commerce-template/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/mikmak/colgate-search-ux-kit/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/mikmak/vip-user-testing/</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- LogMeIn Portfolio -->
+    <url>
+        <loc>https://danreisdesign.com/portfolio/logmein/central-flow/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/logmein/new-gotomeeting/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/logmein/responsive/</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Dataxu Portfolio -->
+    <url>
+        <loc>https://danreisdesign.com/portfolio/dataxu/community/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/dataxu/product-oneview/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/dataxu/contact/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/dataxu/marketing-cms/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/dataxu/rebrand/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/dataxu/blog-subscription/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://danreisdesign.com/portfolio/dataxu/summit-microsites/</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Legal -->
+    <url>
+        <loc>https://danreisdesign.com/legal/terms/</loc>
+        <priority>0.3</priority>
+    </url>
+</urlset>

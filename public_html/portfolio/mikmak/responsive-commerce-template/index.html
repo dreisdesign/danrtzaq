@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <!-- Last updated: Thursday, March 27, 2025 at 5:09AM -->
+  <!-- Essential Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Discover how I created a scalable responsive eCommerce template system that improved development efficiency and user experience." />
+  <meta name="theme-color" content="#fff" />
+  <!-- Title & Favicon -->
+  <title>How I Designed A Scalable Responsive eCommerce Template System | Dan Reis</title>
+  <link rel="shortcut icon" href="/favicon.ico?v=20250309" />
+  <!-- Font Display Strategy -->
+  <style>
+    @font-face {
+    font-family: "Source Sans 3 VF";
+    src: url("/fonts/SourceSans3VF.woff2") format("woff2-variations");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+    }
+
+    .video-container .mobile-preview {
+    max-height: 50vh;
+    max-width: 100%;
+    height: auto;
+    background: black;
+    object-fit: contain;
+    }
+  </style>
+  <link rel="preload" href="/fonts/SourceSans3VF.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <!-- Critical Resources -->
+  <link rel="preload" href="/styles/main.css?v=20250327-0509" as="style" />
+  <link rel="preload" href="/js/zoomable-image.js?v=20250327-0509" as="script" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/styles/main.css?v=20250327-0509" />
+  <!-- JavaScript -->
+  <script src="/js/zoomable-image.js?v=20250327-0509" defer=""></script>
+  </head>
+
+  <body>
+  <!-- HEADER SECTION: Navigation and Title -->
+  <div class="wrapper">
+    <nav class="navigation" role="navigation" aria-label="Main navigation">
+    <ul>
+      <li><a href="/">Dan Reis</a></li>
+      <li><a class="current" href="/portfolio/">Portfolio</a></li>
+      <li><a href="/about/">About Me</a></li>
+    </ul>
+    </nav>
+    <!-- Header -->
+    <header role="banner">
+    <h1>How I Designed A Scalable Responsive eCommerce Template System</h1>
+    <div class="header--descriptions">
+      <p>
+      <strong>Role:</strong>
+      UX/UI Design, Responsive Design, Technical Documentation
+      </p>
+      <div class="card--company-logo">
+      <img src="/assets/images/portfolio/company-logo-mikmak.svg?v=20250327-0509" alt="MikMak Company logo" />
+      </div>
+    </div>
+    </header>
+  </div>
+  <!-- OVERVIEW SECTION: Project Summary -->
+  <div class="wrapper--wide staggered-animation">
+    <div class="piece--summary">
+    <picture>
+      <source srcset="
+        /assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover-320w.webp   320w,
+        /assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover-640w.webp   640w,
+        /assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover-960w.webp   960w,
+        /assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover-1200w.webp 1200w,
+        /assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover-1800w.webp 1800w
+      " type="image/webp" />
+      <img class="featured--image" id="featured--image_cover"
+      src="/assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover.png"
+      alt="Interactive mockup demonstrating responsive eCommerce template system across multiple device sizes"
+      width="1880" height="1000" loading="eager" crossorigin="anonymous" fetchpriority="high" decoding="async"
+      srcset="
+        /assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover-320w.png   320w,
+        /assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover-640w.png   640w,
+        /assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover-960w.png   960w,
+        /assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover-1200w.png 1200w,
+        /assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover-1800w.png 1800w
+      " sizes="(max-width: 1200px) 100vw, 1200px" />
+    </picture>
+    <div class="summary">
+      <div class="spacer"></div>
+      <h2>Summary</h2>
+      <p>
+      This ambitious project aimed to revolutionize how thousands of brands could present
+      their products across multiple digital touchpoints. Our goal was to create a unified
+      template system that could handle everything from quick social media purchases to
+      premium brand website experiences, while scaling efficiently to millions of daily views.
+      </p>
+      <p>
+      The project demanded a careful balance between standardization and flexibility,
+      requiring innovative solutions in both design and technical implementation. Through
+      rigorous testing and iteration, we developed a system that could adapt to diverse brand
+      needs while maintaining consistent quality and performance.
+      </p>
+    </div>
+    </div>
+  </div>
+  <!-- MAIN CONTENT -->
+  <main role="main" id="main-content">
+    <div class="wrapper">
+    <div class="content-wrapper">
+      <!-- Project Background -->
+      <!-- Challenge and Solution sections -->
+      <section class="challenges">
+      <h2>Challenge</h2>
+      <p>
+        Brands faced a fragmented eCommerce landscape. Luxury brands needed sophisticated
+        presentations, while mass-market brands prioritized immediate sales. Social media
+        demanded instant gratification, whereas brand websites required deeper engagement.
+        These diverse needs, coupled with technical constraints and limited mobile screen real
+        estate, posed a significant challenge.
+      </p>
+      <p>
+        The core challenge was not just to create a solution for one scenario, but to develop
+        a versatile system capable of supporting thousands of unique implementations. This
+        system had to be manageable for our engineering team and intuitive for our brand
+        partners, ensuring scalability and ease of use.
+      </p>
+      </section>
+      <!-- Section: Solution -->
+      <section class="solution">
+      <h2>Solution</h2>
+      <p>
+        Our approach centered on progressive enhancement. We established core mobile
+        experiences focused on essential conversion elements: prominent retailer buttons,
+        streamlined product displays, and optimized image handling. This ensured consistent
+        performance across all implementations, regardless of context.
+      </p>
+      <p>
+        We then expanded thoughtfully to larger screens, introducing enhanced features such as
+        advanced store locators and rich media galleries. Instead of simply scaling up the
+        mobile view, we reimagined how the additional space could best serve each brand's
+        unique objectives, creating more immersive and engaging experiences.
+      </p>
+      <p>
+        The key to scalability was embedding intelligent flexibility within the platform. We
+        developed configurable options that allowed brands to customize their presentation
+        while our underlying system maintained performance and consistency. This enabled rapid
+        deployment of new brand experiences without the need for custom development,
+        streamlining the onboarding process.
+      </p>
+      </section>
+      <!-- CASE STUDY CONTENT -->
+      <!-- 1. SYSTEM OVERVIEW -->
+      <!-- Video showing comprehensive system documentation -->
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-video-mymochi-brand-site-prototype-demo.webp">
+        <source
+          src="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-video-mymochi-brand-site-prototype-demo.mp4?v=20250304"
+          type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <strong>Responsive Commerce Template Demo</strong>
+        <span class="spacer"></span>
+        This video demonstrates the responsive commerce template in action, showcasing its
+        adaptability across different devices.
+      </p>
+      </section>
+      <!-- 2. BREAKPOINT DOCUMENTATION -->
+      <!-- Technical specification and implementation details -->
+      <section class="content">
+      <picture>
+        <source srcset="
+          /assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints-320w.webp   320w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints-640w.webp   640w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints-960w.webp   960w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints-1200w.webp 1200w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints-1800w.webp 1800w
+        " type="image/webp" />
+        <img src="/assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints.png"
+        alt="Comprehensive matrix showing various breakpoints and scenarios" title="Zoom" loading="lazy"
+        width="4804" height="2486" srcset="
+          /assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints-320w.png   320w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints-640w.png   640w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints-960w.png   960w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints-1200w.png 1200w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/breakpoints-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <p class="content-caption">
+        <b>Comprehensive Breakpoint Matrix</b>
+        <span class="spacer"></span>
+        This image illustrates the extensive range of breakpoints and scenarios we accounted
+        for in our design system. Each breakpoint was carefully considered to ensure optimal
+        user experiences across a multitude of devices and screen sizes.
+      </p>
+      </section>
+      <!-- 3. RESPONSIVE DESIGN SYSTEM -->
+      <!-- Demonstration of system adaptability across devices -->
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-preview-all-sizes.webp">
+        <source
+          src="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-preview-all-sizes.mp4"
+          type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <strong>Figma Preview: Adaptability Across All Screen Sizes</strong>
+        <span class="spacer"></span>
+        Our robust Figma system enabled comprehensive testing and previewing of content across
+        various screen sizes and scenarios. This ensured that designs were not only visually
+        appealing but also functionally effective on any device.
+      </p>
+      </section>
+      <!-- 4. ENGINEERING SPECIFICATIONS -->
+      <!-- Container documentation for development team -->
+      <section class="content">
+      <picture>
+        <source srcset="
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers-320w.webp   320w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers-640w.webp   640w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers-960w.webp   960w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers-1200w.webp 1200w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers-1800w.webp 1800w
+        " type="image/webp" />
+        <img
+        src="/assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers.png"
+        alt="Detailed specifications for container sizes and breakpoints" title="Zoom" loading="lazy"
+        width="2046" height="1722" srcset="
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers-320w.png   320w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers-640w.png   640w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers-960w.png   960w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers-1200w.png 1200w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-containers-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <p class="content-caption">
+        <b>Engineering Specifications: Container and Breakpoint Details</b>
+        <span class="spacer"></span>
+        Clear communication with engineering regarding breakpoints and container sizes was
+        paramount. This documentation clarifies the max-width for engineers and specifies
+        column percentages, ensuring a consistent layout and design across diverse screen
+        sizes and maintaining design integrity.
+      </p>
+      </section>
+      <section class="content">
+      <picture>
+        <source srcset="
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile-320w.webp   320w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile-640w.webp   640w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile-960w.webp   960w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile-1200w.webp 1200w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile-1800w.webp 1800w
+        " type="image/webp" />
+        <img
+        src="/assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile.png"
+        alt="Mobile and tablet breakpoint documentation" title="Zoom" loading="lazy" width="4190" height="2354"
+        srcset="
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile-320w.png   320w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile-640w.png   640w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile-960w.png   960w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile-1200w.png 1200w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-breakpoint-documentation-mobile-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <p class="content-caption">
+        <b>Mobile and Tablet Breakpoints: Optimizing Retailer Button Visibility</b>
+        <span class="spacer"></span>
+        This demonstrates the template's functionality across various sizes for brand
+        websites, including online and in-store tabs. The visibility of retailer buttons on
+        smaller mobile sizes was a key consideration, ensuring seamless conversion
+        opportunities.
+      </p>
+      </section>
+      <!-- 6. REAL-WORLD IMPLEMENTATION -->
+      <!-- MyMochi case study demonstrating practical application -->
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-video-mymochi-brand-site-prototype-demo.webp">
+        <source
+          src="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-video-mymochi-brand-site-prototype-demo.mp4"
+          type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <strong>MyMochi Brand.com Prototype: Real-World Implementation</strong>
+        <span class="spacer"></span>
+        The initial phase of this project focused on progressive enhancement and establishing
+        an improved layout optimized for both desktop and mobile platforms. This demo
+        showcases the MyMochi Brand.com prototype, highlighting the adaptability of our
+        template system.
+      </p>
+      </section>
+      <!-- 7. RETAILER INTEGRATION PATTERNS -->
+      <!-- Different approaches to retailer button layouts -->
+      <section class="content">
+      <picture>
+        <source srcset="
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers-320w.webp   320w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers-640w.webp   640w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers-960w.webp   960w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers-1200w.webp 1200w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers-1800w.webp 1800w
+        " type="image/webp" />
+        <img
+        src="/assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers.png"
+        alt="Comparison of top-down and bottom-up retailer button layouts" title="Zoom" loading="lazy"
+        width="2954" height="2260" srcset="
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers-320w.png   320w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers-640w.png   640w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers-960w.png   960w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers-1200w.png 1200w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-scenarios-top-down-vs-bottom-up-retailers-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <p class="content-caption">
+        <b>Retailer Button Layout Optimization: Top-Down vs. Bottom-Up Alignment</b>
+        <span class="spacer"></span>
+        A critical aspect of our template system was optimizing retailer button placement. We
+        compared two approaches: bottom-up alignment for creative-focused templates and
+        top-down alignment for discovery-focused layouts. Testing revealed that while
+        bottom-up alignment worked well with rich media backgrounds on mobile, it needed
+        refinement for larger screens to maintain both visual impact and conversion
+        effectiveness.
+      </p>
+      </section>
+      <!-- 8. INTERACTIVE PROTOTYPING -->
+      <!-- Demonstration of testing methodology -->
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/responsive-commerce-template/video-mikmak-responsiveness-animation-top-down-preview-figma.webp">
+        <source
+          src="/assets/videos/portfolio/mikmak/responsive-commerce-template/video-mikmak-responsiveness-animation-top-down-preview-figma.mp4"
+          type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <strong>Figma Interactive Prototype: Top-Down Responsiveness Animation</strong>
+        <span class="spacer"></span>
+        This video showcases various scenarios being tested, with a feature list on the left.
+        By updating content in one central location, we could instantly preview the impact
+        across different devices, streamlining the testing process and ensuring consistency.
+      </p>
+      </section>
+      <!-- 9. RESPONSIVE BEHAVIOR -->
+      <!-- Dynamic content adaptation across screen sizes -->
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-edge-to-edge-conversion-vs-branding-optimization-1080p.webp">
+        <source
+          src="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-edge-to-edge-conversion-vs-branding-optimization-1080p.mp4"
+          type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <b>Hero Image Adaptation: Optimizing for Conversion and Branding</b>
+        <span class="spacer"></span>
+        Previewing video and animations across different screen sizes posed a unique
+        challenge. Our innovative solution involved creating an automated animation using
+        Figma's smart animate feature with a time delay trigger for looping. This allowed
+        real-time visualization of content behavior across various devices without manual
+        browser adjustments.
+      </p>
+      </section>
+      <!-- 10. SYSTEM CONFIGURATION -->
+      <!-- Device and settings demonstrations -->
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/responsive-commerce-template/edge_to_edge.webp">
+        <source src="/assets/videos/portfolio/mikmak/responsive-commerce-template/edge_to_edge.mp4"
+          type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <strong>Figma System Configuration: Device and Settings Demonstration</strong>
+        <span class="spacer"></span>
+        This video demonstrates the system's configurability, showcasing how different devices
+        and settings can be adjusted within Figma. This flexibility allowed us to tailor the
+        user experience to specific contexts and requirements, ensuring optimal performance
+        and visual appeal across a wide range of scenarios.
+      </p>
+      </section>
+      <!-- 11. DESIGN EFFICIENCY -->
+      <!-- Optimization of design workflow -->
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-demo-of-optimizing-and-testing-mobile-conversion-visibility.webp">
+        <source
+          src="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-demo-of-optimizing-and-testing-mobile-conversion-visibility.mp4"
+          type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <strong>
+        Streamlining Design: Efficient Device Duplication and Content Management
+        </strong>
+        <span class="spacer"></span>
+        To streamline the repetitive task of copying and pasting content across different form
+        factors, we nested the single product image, allowing it to be sized once and then
+        duplicated across devices. This, along with similar techniques for text, enabled rapid
+        testing of numerous combinations of brand and product assets, significantly
+        accelerating the design process.
+      </p>
+      </section>
+      <!-- 12. RAPID TESTING SOLUTIONS -->
+      <!-- Automated demonstration of various scenarios -->
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/responsive-commerce-template/all-demos.webp">
+        <source src="/assets/videos/portfolio/mikmak/responsive-commerce-template/all-demos.mp4"
+          type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <strong>Rapid Scenario Testing: Automated Multi-Scenario Demos</strong>
+        <span class="spacer"></span>
+        Addressing the limitations of previewing animations and videos in Figma, we initially
+        used Google Slides to create a grid of examples showcasing various brand assets and
+        scenarios. This included variations in background images, colors, retailer button
+        counts, and screen sizes, providing a comprehensive overview in a single slide.
+      </p>
+      </section>
+      <!-- 13. MOBILE INTERACTION PATTERNS -->
+      <!-- Mobile-specific animation demonstrations -->
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-video-responsiveness-animation-mobile-figma.webp">
+        <source
+          src="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-video-responsiveness-animation-mobile-figma.mp4"
+          type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <strong>Mobile Responsiveness: Figma Animation Demo</strong>
+        <span class="spacer">
+        This video demonstrates the responsiveness animation on mobile devices within Figma,
+        showcasing the dynamic adaptation of content to smaller screen sizes and
+        highlighting the mobile-first approach of our design system.
+        </span>
+      </p>
+      </section>
+      <!-- 14. TECHNICAL IMPLEMENTATION -->
+      <!-- Animation and interaction setup documentation -->
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-video-edge-to-edge-change-image.webp">
+        <source
+          src="/assets/videos/portfolio/mikmak/responsive-commerce-template/mikmak-responsiveness-video-edge-to-edge-change-image.mp4"
+          type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <b>Edge-to-Edge Images: Implementation and Social Media Optimization</b>
+        <span class="spacer">
+        In response to a popular feature request, we implemented edge-to-edge images at 100%
+        width. This enhancement required careful consideration to ensure ease of setup,
+        scalability, and high image quality. Research into common social media image
+        treatments led us to adopt a 1:1 aspect ratio, with options to either fill the
+        screen or maintain padding at smaller sizes, providing flexibility for different
+        content types.
+        </span>
+      </p>
+      </section>
+      <!-- 16. USER EXPERIENCE ENHANCEMENT -->
+      <!-- Search functionality improvements -->
+      <section class="content">
+      <picture>
+        <source srcset="
+          /assets/images/portfolio/mikmak/responsive-commerce-template/user-flow-320w.webp   320w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/user-flow-640w.webp   640w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/user-flow-960w.webp   960w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/user-flow-1200w.webp 1200w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/user-flow-1800w.webp 1800w
+        " type="image/webp" />
+        <img src="/assets/images/portfolio/mikmak/responsive-commerce-template/user-flow.png"
+        alt="User flow diagram showing enhanced search functionality" title="Zoom" loading="lazy"
+        fetchpriority="low" width="4995" height="3326" srcset="
+          /assets/images/portfolio/mikmak/responsive-commerce-template/user-flow-320w.png   320w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/user-flow-640w.png   640w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/user-flow-960w.png   960w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/user-flow-1200w.png 1200w,
+          /assets/images/portfolio/mikmak/responsive-commerce-template/user-flow-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <p class="content-caption">
+        <b>Enhanced Search Functionality: Improving User Navigation</b>
+        <span class="spacer">
+        Building upon our responsive design system, we introduced search enhancements to
+        improve user navigation and content discovery. These enhancements were designed to
+        seamlessly integrate with the existing template system, providing a consistent and
+        intuitive user experience across all devices.
+        </span>
+      </p>
+      </section>
+      <!-- 17. SARGENTO IMPLEMENTATION -->
+      <!-- Real-world example of the system in action -->
+      <section class="content">
+      <div class="content-caption">
+        <p><b>Testing Various Scenarios With Real Customer Assets</b></p>
+      </div>
+      <div class="carousel" aria-roledescription="carousel" aria-label="Sargento implementation examples">
+        <div class="carousel-container">
+        <div class="carousel-slides">
+          <div class="carousel-track">
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
+            <picture>
+            <source srcset="
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento-320w.webp   320w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento-640w.webp   640w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento-960w.webp   960w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento-1200w.webp 1200w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento-1800w.webp 1800w
+              " type="image/webp" />
+            <img
+              src="/assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento.png"
+              alt="Sargento template implementation showcasing 3-product layout optimized for conversion"
+              loading="lazy" width="6128" height="3301" srcset="
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento-320w.png   320w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento-640w.png   640w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento-960w.png   960w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento-1200w.png 1200w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-1-sargento-1800w.png 1800w
+              " sizes="(max-width: 1200px) 100vw, 1200px" />
+            </picture>
+          </div>
+          <div class="carousel-slide">
+            <picture>
+            <source srcset="
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento-320w.webp   320w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento-640w.webp   640w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento-960w.webp   960w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento-1200w.webp 1200w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento-1800w.webp 1800w
+              " type="image/webp" />
+            <img
+              src="/assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento.png"
+              alt="Sargento template variation with 6-product layout focused on product awareness"
+              loading="lazy" width="6128" height="3301" srcset="
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento-320w.png   320w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento-640w.png   640w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento-960w.png   960w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento-1200w.png 1200w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-2-sargento-1800w.png 1800w
+              " sizes="(max-width: 1200px) 100vw, 1200px" />
+            </picture>
+          </div>
+          <div class="carousel-slide">
+            <picture>
+            <source srcset="
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento-320w.webp   320w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento-640w.webp   640w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento-960w.webp   960w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento-1200w.webp 1200w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento-1800w.webp 1800w
+              " type="image/webp" />
+            <img
+              src="/assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento.png"
+              alt="Sargento single product template optimized for direct conversion" loading="lazy"
+              width="6128" height="3301" srcset="
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento-320w.png   320w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento-640w.png   640w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento-960w.png   960w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento-1200w.png 1200w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-3-sargento-1800w.png 1800w
+              " sizes="(max-width: 1200px) 100vw, 1200px" />
+            </picture>
+          </div>
+          <div class="carousel-slide">
+            <picture>
+            <source srcset="
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento-320w.webp   320w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento-640w.webp   640w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento-960w.webp   960w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento-1200w.webp 1200w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento-1800w.webp 1800w
+              " type="image/webp" />
+            <img
+              src="/assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento.png"
+              alt="Sargento branded template with 3 products and prominent logo placement" loading="lazy"
+              width="6128" height="3301" srcset="
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento-320w.png   320w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento-640w.png   640w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento-960w.png   960w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento-1200w.png 1200w,
+              /assets/images/portfolio/mikmak/responsive-commerce-template/experience-4-sargento-1800w.png 1800w
+              " sizes="(max-width: 1200px) 100vw, 1200px" />
+            </picture>
+          </div>
+          </div>
+        </div>
+        <button class="carousel-button prev" aria-label="Previous slide">‹</button>
+        <button class="carousel-button next" aria-label="Next slide">›</button>
+        </div>
+        <p class="content-caption" aria-live="polite" style="text-align: center">
+        <span class="carousel-description active">Sargento Experience 1: Conversion</span>
+        <span class="carousel-description">Sargento Experience 2: Awareness</span>
+        <span class="carousel-description">Sargento Experience 3: Conversion</span>
+        <span class="carousel-description">Sargento Experience 4: Conversion</span>
+        </p>
+        <div class="carousel-nav" role="tablist" aria-label="Carousel navigation">
+        <button class="carousel-indicator active" aria-label="Go to slide 1" aria-selected="true"
+          role="tab"></button>
+        <button class="carousel-indicator" aria-label="Go to slide 2"></button>
+        <button class="carousel-indicator" aria-label="Go to slide 3"></button>
+        <button class="carousel-indicator" aria-label="Go to slide 4"></button>
+        </div>
+      </div>
+      </section>
+      <!-- OUTCOMES SECTION -->
+      <section class="results">
+      <h2>Results</h2>
+      <p>
+        The progressive enhancement approach proved transformative, touching every aspect of
+        our platform's performance and usability. Our systematic design approach dramatically
+        simplified the brand onboarding process, allowing teams to launch new products in a
+        fraction of the previous time while maintaining consistently high quality across
+        implementations.
+      </p>
+      <p>
+        The technical architecture successfully scaled to support thousands of brands and
+        millions of daily views, with the modular design system significantly reducing
+        inconsistencies across implementations. The standardized yet flexible approach meant
+        brands could maintain their unique identity while benefiting from proven patterns and
+        optimizations.
+      </p>
+      <h3 class="oldh4">Case Study: Ricola's Success</h3>
+      <p>
+        A perfect example of our system's effectiveness was Ricola's influencer marketing
+        campaign. Using our template system, they quickly launched shoppable media experiences
+        across multiple platforms for their cold and flu season push. The results were
+        impressive:
+      </p>
+      <ul>
+        <li>
+        2.8x higher purchase intent rate on TikTok compared to the health category average
+        </li>
+        <li>1.6x higher purchase intent rate from top-performing influencers</li>
+        <li>
+        55% of consumers interacting with Ricola influencers showed preference for a
+        specific retailer
+        </li>
+      </ul>
+      <p>
+        This implementation demonstrated how our flexible system could rapidly adapt to
+        specific brand needs while maintaining performance at scale.
+        <a href="/assets/documents/mikmak/responsive-commerce-template/ricola-case-study.pdf" target="_blank">
+        View Ricola case study (PDF)
+        </a>
+      </p>
+      <p>
+        Most importantly, the enhanced user experience delivered meaningful improvements
+        across all touchpoints. The careful attention to mobile-first design ensured core
+        conversion elements remained prominent, while progressive enhancement provided richer
+        experiences on larger screens. The optimized store location features and improved
+        accessibility made the platform more useful to a broader audience.
+      </p>
+      <h2>Learnings &amp; Next Steps</h2>
+      <p>
+        This project reinforced that successful product design isn't just about creating
+        beautiful interfaces - it's about solving complex problems through clear communication
+        and systematic thinking. The role of a product designer is to bridge the gap between
+        diverse stakeholders - from product managers and engineers to business leaders and
+        customers - ensuring everyone understands both the challenges and solutions clearly.
+      </p>
+      </section>
+    </div>
+    <div class="next-project-container">
+      <!-- Next project card will be automatically inserted here -->
+    </div>
+    </div>
+  </main>
+  <!-- FOOTER -->
+  <div class="wrapper">
+    <footer class="footer" role="contentinfo">
+    <p>
+      Designed &amp; Developed by
+      <b><a href="/about/">Dan Reis</a></b>
+    </p>
+    </footer>
+  </div>
+  <!-- Javascript -->
+  <script src="/js/zoomable-image.js?v=20250327-0509" defer></script>
+  <script src="/js/carousel.js?v=20250327-0509" defer></script>
+  <script src="/js/next-project.js?v=20250327-0509"></script>
+  <script src="/js/next-project.js?v=20250327-0509" defer></script>
+  </body>
+
+</html>

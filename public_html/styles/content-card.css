@@ -1,0 +1,223 @@
+/* Portfolio Card Component
+ * Contains: Card styling used across portfolio pages
+ * Version: 2024-03-11-v6
+ */
+
+/* 
+ * Card Component Styles
+ * Used for portfolio items and next/prev navigation
+ */
+
+/* Card Container */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Individual Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-decoration: none;
+  color: var(--darkblue);
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.card:hover,
+.card:active {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  background-color: var(--highlight-1);
+  transition: all 0.15s ease-in;
+  text-decoration: underline;
+}
+
+/* Card Details Section */
+.card--details {
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-height: 150px;
+}
+
+.card--details h2 {
+  margin-top: 0;
+  /* Base font size for mobile */
+  font-size: 1.25rem;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.card--details p {
+  margin-bottom: 0;
+}
+
+/* Card Image Container */
+.card picture {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  /* Set consistent aspect ratio */
+  aspect-ratio: 1880 / 1000;
+}
+
+/* Card Images */
+.card img {
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  object-position: right center;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Company Logo */
+.card--company-logo {
+  display: block;
+  max-width: 80px;
+  height: auto;
+  margin-top: 0.25rem;
+}
+
+.card--company-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  box-shadow: none;
+}
+
+/* Banner Card - special variant */
+.card--banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
+  justify-items: center;
+  text-decoration: none;
+  border-radius: 10px;
+  float: left;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Specific styling for Next Project cards */
+main .cards .card {
+  margin-top: 10px;
+  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* =====================
+   RESPONSIVE LAYOUTS 
+   ===================== */
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  /* Typography */
+  .card--details h2 {
+    font-size: 1rem;
+  }
+
+  /* Images */
+  .card img {
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+  }
+
+  /* Layout: side-by-side except on portfolio index page */
+  body:not(.portfolio-index) .card {
+    flex-direction: row;
+  }
+
+  body:not(.portfolio-index) .card picture {
+    width: 40%;
+    display: flex;
+    align-items: center;
+  }
+
+  body:not(.portfolio-index) .card--details {
+    width: 60%;
+  }
+
+  /* Special order for cards in single-project view */
+  .single-project .card .card--details {
+    order: 2;
+  }
+
+  .single-project .card picture {
+    order: 1;
+  }
+
+  .card--details {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+  }
+
+  /* Exception for "Next Project" cards - these should be full width */
+  main .cards .card {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Medium screens (900px+) */
+@media (min-width: 900px) {
+  /* Two columns for portfolio index */
+  .portfolio-index .wrapper > .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large screens (1100px+) */
+@media (min-width: 1100px) {
+  /* Three columns for portfolio index */
+  .portfolio-index .wrapper > .cards {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 0.25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card--details h2 {
+    font-size: 1rem;
+  }
+}
+
+/* Extra large screens (1400px+) */
+@media (min-width: 1400px) {
+  .portfolio-index .wrapper > .cards {
+    max-width: 1600px;
+  }
+
+  .card--details h2 {
+    font-size: 1.35rem;
+  }
+
+  /* Card Images */
+  .card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  /* Make text portion slightly wider on large screens */
+  .single-project .card .card--details {
+    width: 60%;
+  }
+
+  .single-project .card picture {
+    width: 40%;
+  }
+}

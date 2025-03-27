@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <!-- Last updated: Thursday, March 27, 2025 at 5:09AM -->
+  <!-- Essential Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Learn how I developed an innovative testing framework that accelerated our product launch while ensuring quality." />
+  <meta name="theme-color" content="#fff" />
+  <!-- Title & Favicon -->
+  <title>
+    How I Created an Innovative Testing Framework to Expedite A Major Product Launch | Dan Reis
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico?v=20250309" />
+  <!-- Font Display Strategy -->
+  <style>
+    @font-face {
+    font-family: "Source Sans 3 VF";
+    src: url("/fonts/SourceSans3VF.woff2") format("woff2-variations");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+    }
+
+    .mobile-preview {
+    max-height: 50vh;
+    max-width: 100%;
+    height: auto;
+    background: black;
+    object-fit: contain;
+    }
+
+    .video-container .mobile-preview {
+    max-height: 50vh;
+    max-width: 100%;
+    height: auto;
+    background: black;
+    object-fit: contain;
+    }
+  </style>
+  <link rel="preload" href="/fonts/SourceSans3VF.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <!-- Critical Resources -->
+  <link rel="preload" href="/styles/main.css?v=20250327-0509" as="style" />
+  <link rel="preload" href="/js/zoomable-image.js?v=20250327-0509" as="script" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/styles/main.css?v=20250327-0509" />
+  <!-- JavaScript -->
+  <script src="/js/zoomable-image.js?v=20250327-0509" defer=""></script>
+  </head>
+
+  <body>
+  <!-- HEADER SECTION: Navigation and Title -->
+  <div class="wrapper">
+    <nav class="navigation" role="navigation" aria-label="Main navigation">
+    <ul>
+      <li><a href="/">Dan Reis</a></li>
+      <li><a class="current" href="/portfolio/">Portfolio</a></li>
+      <li><a href="/about/">About Me</a></li>
+    </ul>
+    </nav>
+    <!-- Header -->
+    <header role="banner">
+    <h1>How I Created an Innovative Testing Framework to Expedite A Major Product Launch</h1>
+    <div class="header--descriptions">
+      <p>
+      <strong>Role:</strong>
+      Research, User Testing, Clickable Prototypes, Product Design, VQA
+      </p>
+      <div class="card--company-logo">
+      <img src="/assets/images/portfolio/company-logo-mikmak.svg?v=20250327-0509" alt="MikMak Company logo" />
+      </div>
+    </div>
+    </header>
+  </div>
+  <!-- OVERVIEW SECTION: Project Summary -->
+  <div class="wrapper--wide staggered-animation">
+    <section class="piece--summary">
+    <div class="summary">
+      <picture>
+      <source srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/featured--cover-320w.webp   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/featured--cover-640w.webp   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/featured--cover-960w.webp   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/featured--cover-1200w.webp 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/featured--cover-1800w.webp 1800w
+        " type="image/webp" />
+      <img class="featured--image" id="featured--image_cover"
+        src="/assets/images/portfolio/mikmak/vip-user-testing/featured--cover.png"
+        alt="MikMak VIP project cover image showing central plans and pricing" width="1920" height="1040"
+        loading="eager" crossorigin="anonymous" srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/featured--cover-320w.png   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/featured--cover-640w.png   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/featured--cover-960w.png   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/featured--cover-1200w.png 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/featured--cover-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <h2>Summary</h2>
+      <p>
+      MikMak provides eCommerce marketing analytics and enablement software to accelerate
+      online sales for brands. A MikMak eCommerce URL can be used either as a standalone
+      landing page linked from an ad, or embedded into a brand's website.
+      </p>
+      <p>
+      The page includes dynamic retailer buttons for online shopping and nearby locations.
+      Beyond selling more products, brands leverage MikMak to gather data about the retailer
+      and product preferences to influence strategy.
+      </p>
+    </div>
+    </section>
+  </div>
+  <!-- MAIN CONTENT -->
+  <main role="main" id="main-content">
+    <div class="wrapper">
+    <div class="content-wrapper">
+      <!-- Project Background -->
+      <!-- Challenge and Solution sections -->
+      <section class="challenges">
+      <h2>Challenge</h2>
+      <p>
+        At the beginning of this project, MikMak was expanding from supporting grocery brands to
+        other categories, specifically alcohol. In order to best support the sales of alcohol,
+        we needed to provide a better in-store product locator because most sales of alcohol
+        happen in stores.
+      </p>
+      <p>
+        We would need better in-store data, and identified the interest to integrate the leading
+        alcohol retailer and distributor data source provider called VIP (Vermont Information
+        Processing) into the MikMak platform. This would expand our retailer data providing a
+        better user experience for shoppers and allowing our customers, and brands, to learn
+        more about shopper behavior.
+      </p>
+      <p>
+        Our challenge was to identify the best way to leverage this new data source so that we
+        could provide the following for our customers:
+      </p>
+      <ul>
+        <li>Enables shoppable experiences across an omnichannel strategy</li>
+        <li>
+        Consumers can shop from big box stores, restaurants, and even to small local retailers
+        </li>
+        <li>
+        Enables beverage brands to drive the shoppers to the closest locations to where
+        consumers are shopping
+        </li>
+        <li>Changes how our customers leverage their omnichannel experiences</li>
+      </ul>
+      </section>
+      <!-- Section: Solution -->
+      <section class="solution">
+      <h2>Solution</h2>
+      <p>
+        I conducted extensive user testing to truly understand the problems customers were
+        facing. I also uncovered additional points of friction along the way. With this
+        feedback, I redesigned the flow and continued testing iterations until ultimately
+        landing on a final design geared towards usability and desirability.
+      </p>
+      <p>
+        I kicked off the research by learning how VIP data was being used in existing alcohol
+        brand websites. We quickly found clear patterns and a range of existing implementations
+        to choose from. I focused on identifying the key patterns we would need to leverage the
+        data, and performed user testing to identify the most usable solutions, and then
+        compiled them together. By pulling the best patterns we would create something new, yet
+        familiar.
+      </p>
+      <p>
+        To expedite feedback I simply ran user tests on actual websites (stonebrewing.com, etc)
+        to find out which patterns are most intuitive.
+      </p>
+      </section>
+      <!-- CASE STUDY CONTENT -->
+      <section class="content">
+      <picture>
+        <source srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington-320w.webp   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington-640w.webp   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington-960w.webp   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington-1200w.webp 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington-1800w.webp 1800w
+        " type="image/webp" />
+        <img src="/assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington.png"
+        alt="Screenshot of Lexington brand site with VIP data filters" loading="lazy" width="1200" height="974"
+        srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington-320w.png   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington-640w.png   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington-960w.png   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington-1200w.png 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/1-vip-lexington-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <p class="content-caption">
+        <b>Researching Default VIP Data Filters</b>
+        <span class="spacer"></span>
+        I began research by finding existing examples of the default VIP data filters as seen on
+        an actual brand site. This design appeared to be the default and was common across
+        multiple brands.
+      </p>
+      </section>
+      <section class="content">
+      <picture>
+        <source srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro-320w.webp   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro-640w.webp   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro-960w.webp   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro-1200w.webp 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro-1800w.webp 1800w
+        " type="image/webp" />
+        <img src="/assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro.png"
+        alt="Audit of MikMak page for VIP data integration opportunities" loading="lazy" width="1200"
+        height="845" srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro-320w.png   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro-640w.png   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro-960w.png   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro-1200w.png 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/2-vip-miro-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <p class="content-caption">
+        <b>Auditing Existing Pages</b>
+        <span class="spacer"></span>
+        We audited the existing MikMak page for potential opportunities to incorporate and
+        leverage the new VIP data. We kept in mind the existing product and sought to make
+        improvements in areas most beneficial to people in real life.
+      </p>
+      </section>
+      <section class="content">
+      <picture>
+        <source srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker-320w.webp   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker-640w.webp   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker-960w.webp   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker-1200w.webp 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker-1800w.webp 1800w
+        " type="image/webp" />
+        <img src="/assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker.png"
+        alt="Johnnie Walker website with VIP data integration and filter patterns" loading="lazy" width="1200"
+        height="906" srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker-320w.png   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker-640w.png   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker-960w.png   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker-1200w.png 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/3-vip-johnnie-walker-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <p class="content-caption">
+        <b>Analyzing Existing Designs</b>
+        <span class="spacer"></span>
+        I searched for existing alcohol websites with VIP data integration and analyzed the
+        design patterns. I narrowed it down to 3 websites, each representing common filter
+        patterns to find the most intuitive and easy to use. Next, I ran user tests on mobile
+        and desktop.
+      </p>
+      </section>
+      <section class="content">
+      <div class="video-container">
+        <div class="overlay" data-video-overlay></div>
+        <video class="standard-video" playsinline webkit-playsinline muted loop width="100%" preload="metadata"
+        loading="lazy" controlslist="nodownload noremoteplayback" disablepictureinpicture data-video
+        poster="/assets/videos/portfolio/mikmak/vip-user-testing/vip-prototype.webp">
+        <source src="/assets/videos/portfolio/mikmak/vip-user-testing/vip-prototype.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="content-caption">
+        <b>Creating a Mobile Clickable Prototype to Test Error States</b>
+        <span class="spacer"></span>
+        After analyzing user tests, I distinguished between essential features and
+        nice-to-haves. This interactive prototype was built for the next testing phase,
+        emphasizing the importance of a distance dropdown and utilizing common single-click
+        filters.
+      </p>
+      </section>
+      <section class="content">
+      <picture>
+        <source srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow-320w.webp   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow-640w.webp   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow-960w.webp   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow-1200w.webp 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow-1800w.webp 1800w
+        " type="image/webp" />
+        <img src="/assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow.png"
+        alt="Prototype flow testing different scenarios such as no retailers available" loading="lazy"
+        width="1200" height="698" srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow-320w.png   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow-640w.png   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow-960w.png   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow-1200w.png 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/5-vip-prototype-flow-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <p class="content-caption">
+        <b>Testing Different Scenarios</b>
+        <span class="spacer"></span>
+        Finally, I began testing different scenarios such as no retailers available because that
+        was causing confusion in the testing. The clickable prototype was built from a single
+        frame and utilized interactive variants in Figma for efficiency. Upon further review,
+        this may have been overengineered, and it's something I have learned from.
+      </p>
+      </section>
+      <section class="content">
+      <picture>
+        <source srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada-320w.webp   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada-640w.webp   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada-960w.webp   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada-1200w.webp 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada-1800w.webp 1800w
+        " type="image/webp" />
+        <img src="/assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada.png"
+        alt="Final production version on Sierra Nevada website with VIP data integration" loading="lazy"
+        width="1200" height="1249" srcset="
+        /assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada-320w.png   320w,
+        /assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada-640w.png   640w,
+        /assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada-960w.png   960w,
+        /assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada-1200w.png 1200w,
+        /assets/images/portfolio/mikmak/vip-user-testing/6-vip-production-sierra-nevada-1800w.png 1800w
+        " sizes="(max-width: 1200px) 100vw, 1200px" />
+      </picture>
+      <p class="content-caption">
+        <b>Final Production Version</b>
+        <span class="spacer"></span>
+        The final production version as seen on sierranevada.com incorporates many of the
+        elements discovered early on, while also adding new features as found to be important
+        throughout the user testing.
+      </p>
+      </section>
+      <!-- OUTCOMES SECTION -->
+      <section class="results">
+      <h2>Results</h2>
+      <p>
+        The launch of this project was extremely positive for the company and the customers.
+        "Positive market energy and feedback about VIP - “OMG I need this” “The next big thing
+        for sales to lean into”. Diageo and Annheiser Busch are like WHAT?! Others said this was
+        "The Holy grail - we can finally explain the full customer journey"
+      </p>
+      <p>
+        Continued expansion and demand for this integration have significantly given MikMak a
+        leg up in the alcohol space and plans to expand this functionality to more verticals are
+        already in the works at the time of this posting.
+      </p>
+      </section>
+    </div>
+    <div class="next-project-container">
+      <!-- Next project card will be automatically inserted here -->
+    </div>
+    </div>
+  </main>
+  <!-- FOOTER -->
+  <div class="wrapper">
+    <footer class="footer" role="contentinfo">
+    <p>
+      Designed &amp; Developed by
+      <b><a href="/about/">Dan Reis</a></b>
+    </p>
+    </footer>
+  </div>
+  <!-- Javascript -->
+  <script src="/js/zoomable-image.js?v=20250327-0509" defer></script>
+  <script src="/js/carousel.js?v=20250327-0509" defer></script>
+  <script src="/js/next-project.js?v=20250327-0509"></script>
+  <script src="/js/next-project.js?v=20250327-0509" defer></script>
+  </body>
+
+</html>

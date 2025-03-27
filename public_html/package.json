@@ -1,0 +1,24 @@
+{
+  "name": "public_html",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-replace": "^1.1.4"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "sharp": "^0.33.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://danrtzaq@danreisdesign.com:21098/home/danrtzaq/public_html"
+  },
+  "description": ""
+}

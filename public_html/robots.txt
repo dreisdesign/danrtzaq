@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Allow: /portfolio/
+Allow: /portfolio/mikmak/
+Allow: /portfolio/logmein/
+Allow: /portfolio/dataxu/
+Allow: /about/
+Allow: /legal/
+Allow: /favicon.ico
+Allow: /404.html
+
+Disallow: /_system/
+Disallow: /error/
+Disallow: /reports/
+Disallow: /*.bak$
+Disallow: /site.webmanifest
+Disallow: /_company-template/
+Disallow: /_project-template/
+Disallow: /*.tmp$
+Disallow: /*.old$
+Disallow: /*.cache$
+
+Sitemap: https://danreisdesign.com/_system/sitemap.xml

@@ -1,0 +1,106 @@
+# Basic settings
+Options +FollowSymLinks -Indexes
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+RewriteEngine On
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Portfolio redirects and paths
+RewriteRule ^(dataxu|logmein|mikmak)-([^/]+)\.html$ /portfolio/$1/$2/ [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^portfolio/(dataxu|logmein|mikmak)/([^/]+)/?$ /portfolio/$1/$2/index.html [L]
+
+# Clean URLs
+RewriteRule ^(terms|privacy|cookies)/?$ /legal/$1.html [L]
+RewriteRule ^about/?$ /about/index.html [L]
+
+# Error pages
+ErrorDocument 404 /404.html
+ErrorDocument 500 /error/500.html
+ErrorDocument 403 /404.html
+
+# Remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# HTML extension handling
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Redirect old email DNS guide to homepage
+RedirectMatch 301 ^/email-dns-setup-guide\.html$ /
+
+<IfModule mod_headers.c>
+  # HTML files: No cache
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  # CSS and JavaScript files: Cache for 1 year (immutable)
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Images (jpg, jpeg, png, gif, webp, ico, svg): Cache for 1 year (immutable)
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|ico|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Fonts (woff2, woff, ttf, otf): Cache for 1 year (immutable)
+  <FilesMatch "\.(woff2|woff|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Video files (mp4): Cache for 1 year (immutable)
+  <FilesMatch "\.mp4$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+    Header set Accept-Ranges "bytes"
+    Header set Content-Type "video/mp4"
+    Header append Vary Accept-Encoding
+    Header set X-Content-Type-Options "nosniff"
+    Header set Accept-Ranges bytes
+  </FilesMatch>
+
+  # Video files with versioning: Cache for 1 year (immutable)
+  <FilesMatch "\.mp4\?v=[0-9]+">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # CORS headers
+  Header set Access-Control-Allow-Origin "*"
+
+  # Security headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+
+  # Vary header for mobile
+  Header append Vary User-Agent
+  Header set Connection keep-alive
+</IfModule>
+
+# Enable compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript image/svg+xml
+</IfModule>
+
+# Prevent viewing of .htaccess file
+<Files .htaccess>
+  order allow,deny
+  deny from all
+</Files>

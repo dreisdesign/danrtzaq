@@ -1,0 +1,21 @@
+/*
+ * Dan Reis Portfolio Site
+ * Main CSS File - Imports all modular CSS components
+ * Version: 2024-03-11-v6
+ */
+
+/* Core modules */
+@import 'main-base.css?v=20250327-0509';
+@import 'main-layout.css?v=20250327-0509';
+@import 'main-components.css?v=20250327-0509';
+@import 'main-animations.css?v=20250327-0509';
+@import 'main-utilities.css?v=20250327-0509';
+@import 'main-responsiveness.css?v=20250327-0509';
+
+/* Content layouts */
+@import 'content-card.css?v=20250327-0509';
+
+/* Features */
+@import 'feature-zoom.css?v=20250327-0509';
+@import 'feature-video.css?v=20250327-0509';
+@import 'feature-carousel.css?v=20250327-0509';

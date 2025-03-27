@@ -1,0 +1,107 @@
+{
+  "/portfolio/mikmak/acquisition-rebrand/": {
+    "path": "/portfolio/mikmak/colgate-search-ux-kit/",
+    "title": "From Solution to System: How A New Template Became a Reusable UX Kit",
+    "description": "Learn how a one-off solution evolved into a reusable UX kit that improved search experiences across multiple brands.",
+    "company": "mikmak",
+    "imageBase": "/assets/images/portfolio/mikmak/colgate-search-ux-kit/featured--cover"
+  },
+  "/portfolio/mikmak/colgate-search-ux-kit/": {
+    "path": "/portfolio/mikmak/platform-asset-flexibility/",
+    "title": "Commerce Asset Flexibility: Empowering Brands Through Platform Innovation",
+    "description": "Discover how we enhanced platform flexibility to empower brands with greater control over their commerce assets.",
+    "company": "mikmak",
+    "imageBase": "/assets/images/portfolio/mikmak/platform-asset-flexibility/featured--cover"
+  },
+  "/portfolio/mikmak/platform-asset-flexibility/": {
+    "path": "/portfolio/mikmak/responsive-commerce-template/",
+    "title": "How I Designed A Scalable Responsive eCommerce Template System",
+    "description": "Discover how I created a scalable responsive eCommerce template system that improved development efficiency and user experience.",
+    "company": "mikmak",
+    "imageBase": "/assets/images/portfolio/mikmak/responsive-commerce-template/featured--cover"
+  },
+  "/portfolio/mikmak/responsive-commerce-template/": {
+    "path": "/portfolio/mikmak/vip-user-testing/",
+    "title": "How I Created an Innovative Testing Framework to Expedite A Major Product Launch",
+    "description": "Learn how I developed an innovative testing framework that accelerated our product launch while ensuring quality.",
+    "company": "mikmak",
+    "imageBase": "/assets/images/portfolio/mikmak/vip-user-testing/featured--cover"
+  },
+  "/portfolio/mikmak/vip-user-testing/": {
+    "path": "/portfolio/logmein/central-flow/",
+    "title": "How I Leveraged User Testing to Improve a Purchase Flow for Customers",
+    "description": "I was tasked with improving the Central purchase flow for customers to seamlessly navigate from the marketing site into the product.",
+    "company": "logmein",
+    "imageBase": "/assets/images/portfolio/logmein/central-flow/featured--cover"
+  },
+  "/portfolio/logmein/central-flow/": {
+    "path": "/portfolio/logmein/new-gotomeeting/",
+    "title": "How I Rapidly Designed the New GoToMeeting Product Launch Page",
+    "description": "Learn how I rapidly designed and launched the new GoToMeeting product page through iterative design and stakeholder collaboration.",
+    "company": "logmein",
+    "imageBase": "/assets/images/portfolio/logmein/new-gotomeeting/featured--cover"
+  },
+  "/portfolio/logmein/new-gotomeeting/": {
+    "path": "/portfolio/logmein/responsive/",
+    "title": "How I Applied Responsive Design in Collaboration with Developers",
+    "description": "See how I collaborated with developers to implement responsive design patterns across LogMeIn's core product pages.",
+    "company": "logmein",
+    "imageBase": "/assets/images/portfolio/logmein/responsive/featured--cover"
+  },
+  "/portfolio/logmein/responsive/": {
+    "path": "/portfolio/dataxu/blog-subscription/",
+    "title": "How Small Changes Made a Big Impact on a Blog Subscription",
+    "description": "See how small UX improvements led to significant increases in blog subscription rates through iterative design and testing.",
+    "company": "dataxu",
+    "imageBase": "/assets/images/portfolio/dataxu/blog-subscription/featured--cover"
+  },
+  "/portfolio/dataxu/blog-subscription/": {
+    "path": "/portfolio/dataxu/community/",
+    "title": "How I Worked with a Product Team to Design a Customer Help Portal",
+    "description": "Learn how I collaborated with a product team to design an intuitive help portal that improved customer support and reduced support tickets.",
+    "company": "dataxu",
+    "imageBase": "/assets/images/portfolio/dataxu/community/featured--cover"
+  },
+  "/portfolio/dataxu/community/": {
+    "path": "/portfolio/dataxu/contact/",
+    "title": "How I Redesigned and Improved a Contact Page",
+    "description": "See how I improved user engagement and conversion rates by redesigning a key contact page.",
+    "company": "dataxu",
+    "imageBase": "/assets/images/portfolio/dataxu/contact/featured--cover"
+  },
+  "/portfolio/dataxu/contact/": {
+    "path": "/portfolio/dataxu/marketing-cms/",
+    "title": "How I Built a Custom CMS for a Marketing Team",
+    "description": "See how I designed and built a custom CMS that empowered the marketing team to efficiently manage their content.",
+    "company": "dataxu",
+    "imageBase": "/assets/images/portfolio/dataxu/marketing-cms/featured--cover"
+  },
+  "/portfolio/dataxu/marketing-cms/": {
+    "path": "/portfolio/dataxu/product-oneview/",
+    "title": "How I Used Prototyping to Design a New Product",
+    "description": "See how iterative prototyping and user feedback shaped the development of a new analytics product for media buyers.",
+    "company": "dataxu",
+    "imageBase": "/assets/images/portfolio/dataxu/product-oneview/featured--cover"
+  },
+  "/portfolio/dataxu/product-oneview/": {
+    "path": "/portfolio/dataxu/rebrand/",
+    "title": "How a Small Team Rebranded a Global Software Company",
+    "description": "Learn how our small team successfully rebranded a global software company through collaborative design and strategic implementation.",
+    "company": "dataxu",
+    "imageBase": "/assets/images/portfolio/dataxu/rebrand/featured--cover"
+  },
+  "/portfolio/dataxu/rebrand/": {
+    "path": "/portfolio/dataxu/summit-microsites/",
+    "title": "How I Built a Modular Microsite for a Multi-City User Conference",
+    "description": "Learn how I designed and built a modular microsite system to support multi-city conference events while maintaining brand consistency.",
+    "company": "dataxu",
+    "imageBase": "/assets/images/portfolio/dataxu/summit-microsites/featured--cover"
+  },
+  "/portfolio/dataxu/summit-microsites/": {
+    "path": "/portfolio/mikmak/acquisition-rebrand/",
+    "title": "How I Unified Two Global Commerce Platforms Through Strategic Design",
+    "description": "Discover how I unified two global commerce platforms through strategic design following a major acquisition.",
+    "company": "mikmak",
+    "imageBase": "/assets/images/portfolio/mikmak/acquisition-rebrand/featured--cover"
+  }
+}

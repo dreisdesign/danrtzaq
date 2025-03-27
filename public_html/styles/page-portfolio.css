@@ -1,0 +1,121 @@
+/* Portfolio Main Page Styles
+ * Contains: Portfolio index page specific layouts and components
+ * Version: 2024-03-11-v4
+  body {
+  background-image: url('/assets/images/index/pattern-grayblue2.svg'), linear-gradient(45deg, rgb(160, 160, 244), rgb(160, 160, 244));
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 330px;
+  * Adjust this value based on your pattern size *
+  background-color: rgb(160, 160, 244);
+  background-blend-mode: color-burn;
+}
+ */
+
+h1 {
+  text-align: center;
+}
+
+/* Portfolio main page layout */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+  padding: 20px 0;
+}
+
+/* Header specific to portfolio page */
+header {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -2rem;
+}
+
+h1 {
+  max-width: 960px;
+  text-align: center;
+}
+
+/* Cards container specific to portfolio page */
+.cards {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+/* Override card layout for portfolio main page */
+.cards .card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.cards .card .card--details {
+  order: 2;
+}
+
+.cards .card img {
+  order: 1;
+}
+
+.portfolio-header {
+  margin-bottom: 2rem;
+}
+
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+/* Staggered card animation for portfolio items */
+.cards.staggered-animation .card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.cards.staggered-animation .card:hover {
+  transform: translateY(-5px);
+}
+
+@media (min-width: 530px) {
+  header {
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Media queries specific to portfolio layout */
+@media (min-width: 768px) {
+  header {
+    margin-bottom: 1rem;
+  }
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+  }
+
+  /* Increase the maximum width of each card for better readability */
+  .card {
+    max-width: 550px;
+    justify-self: center;
+  }
+}
+
+/* Remove the 3-column layout for larger screens */
+@media (min-width: 1200px) {
+  .wrapper {
+    max-width: 1600px;
+  }
+
+  /* Keep 2 columns but make them slightly wider */
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+  }
+
+  /* Allow cards to be a bit larger on big screens */
+  .card {
+    max-width: 580px;
+  }
+}

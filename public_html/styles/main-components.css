@@ -1,0 +1,193 @@
+/* Component Styles
+ * Contains: Buttons, cards, interactive elements
+ * Version: 2024-03-11-v1
+ */
+
+/* Buttons */
+.button {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 0.87em;
+  text-decoration: none;
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.1s ease-in;
+  z-index: 1;
+  background-color: var(--darkblue);
+  color: white;
+  margin: 0 auto;
+  display: block;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+}
+
+/* Ensure color is applied to anchor buttons */
+a.button {
+  color: white;
+  text-decoration: none;
+}
+
+/* Button variants */
+.button--light {
+  background-color: var(--highlight-1);
+  color: var(--darkblue);
+}
+
+a.button.button--light {
+  color: var(--darkblue);
+}
+
+/* Button hover states */
+.button:hover,
+.button:focus,
+.button:active {
+  box-shadow: 0px 0px 0px 5px var(--darkblue);
+  text-decoration: underline;
+  transition: all 0.1s ease-in;
+  z-index: 1;
+  width: fit-content;
+}
+
+/* Light button hover states */
+.button--light:hover,
+.button--light:focus,
+.button--light:active {
+  box-shadow: 0px 0px 0px 5px var(--highlight-1);
+  background-color: var(--highlight-1);
+  color: var(--darkblue);
+}
+
+/* Navigation hover styles */
+nav a:hover,
+p a:hover,
+aside a:hover,
+.button--light:hover,
+.current,
+nav a:active,
+p a:active,
+aside a:active,
+.button--light:active {
+  box-shadow: 0px 0px 0px 5px var(--highlight-1);
+  background-color: var(--highlight-1);
+  text-decoration: underline;
+  border-radius: 20px;
+  transition: all 0.1s ease-in;
+  color: var(--darkblue);
+}
+
+.current,
+.current:hover {
+  text-decoration: none;
+}
+
+/* Featured header images */
+.featured--image {
+  width: 100%;
+  max-width: 940px;
+  height: auto;
+  aspect-ratio: 1880/1017;
+}
+
+/* Content section images */
+.content picture {
+  max-height: 500px;
+}
+
+.content img {
+  width: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+  height: 100%;
+  max-width: 800px;
+  max-height: 600px;
+}
+
+/* Home page SVG */
+.image--home {
+  aspect-ratio: auto;
+  height: auto;
+  width: 100%;
+  min-width: 50px;
+  max-height: 125px;
+  transform-origin: 60% 70%;
+  animation: waveHand 2.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--darkblue);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus styles */
+a:focus {
+  outline: 2px solid var(--darkblue);
+  outline-offset: 2px;
+  width: fit-content;
+}
+
+button:focus {
+  width: fit-content;
+}
+
+/* Remove .video-container--dark class since it's now handled in feature-video.css */
+
+/* Aspect ratio classes */
+.aspect-ratio-16-9 {
+  aspect-ratio: 16/9;
+}
+
+.aspect-ratio-4-3 {
+  aspect-ratio: 4/3;
+}
+
+.aspect-ratio-3-4 {
+  aspect-ratio: 3/4;
+}
+
+.aspect-ratio-1-1 {
+  aspect-ratio: 1/1;
+}
+
+/* Image error state */
+.image-load-error {
+  border: 1px dashed #ff0000;
+  min-height: 100px;
+  position: relative;
+}
+
+.image-load-error::after {
+  content: "⚠️ Image failed to load";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #ff0000;
+}

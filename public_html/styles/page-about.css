@@ -1,0 +1,88 @@
+/* About Page Styles
+ * Contains: About page specific layouts and components
+ * Version: 2024-03-11-v1
+ */
+
+h1 {
+  text-align: center;
+}
+
+.wrapper.wrapper--aboutme {
+  margin-top: 0;
+}
+
+.content--aboutme h2 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.sidebar--aboutme > * {
+  margin: 0;
+}
+
+.sidebar--aboutme h4 {
+  padding-top: 20px;
+}
+
+.sidebar--aboutme .featured--image {
+  max-width: 300px;
+  margin: 0 auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
+.content--aboutme a,
+.content--aboutme a:visited {
+  color: var(--linkblue);
+  text-decoration: underline;
+}
+
+.content--aboutme a:hover,
+.content--aboutme a:active {
+  box-shadow: 0px 0px 0px 5px var(--highlight-1);
+  background-color: var(--highlight-1);
+  text-decoration: underline;
+  border-radius: 20px;
+  transition: all 0.1s ease-in;
+  color: var(--darkblue);
+}
+
+.wrapper--aboutme > * {
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.sidebar--aboutme > * {
+  font-size: 0.75em;
+}
+
+@media screen and (min-width: 500px) {
+  .sidebar--aboutme {
+    float: left;
+    width: 19.1489%;
+  }
+
+  .content--aboutme {
+    float: right;
+    width: 79.7872%;
+  }
+
+  .wrapper--aboutme {
+    margin: 0 auto;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+  }
+
+  .wrapper--wide {
+    clear: both;
+  }
+}
+
+@supports (display: grid) {
+  .wrapper--aboutme > * {
+    width: auto;
+    margin: 10px;
+  }
+}

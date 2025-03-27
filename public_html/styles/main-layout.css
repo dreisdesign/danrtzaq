@@ -1,0 +1,165 @@
+/* Layout Styles
+ * Contains: Wrappers, grids, structural elements
+ * Version: 2024-03-11-v1
+ */
+
+/* Spacer */
+.spacer {
+  display: block;
+}
+
+/* Main Wrapper */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 20px auto 0 auto;
+  max-width: 650px;
+}
+
+/* Full Width Wrapper */
+.wrapper--wide {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--highlight-1);
+  padding: 30px;
+}
+
+/* Featured Image Styling */
+.featured--image {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: 1880/1000;
+  /* Maintains the aspect ratio from the HTML */
+  display: block;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.featured--image:hover {
+  transform: scale(1.01);
+}
+
+.piece--summary picture {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  grid-column: 2 / -2;
+  z-index: 1;
+  padding: 30px 20px;
+  max-width: 960px;
+  margin-bottom: 0.25rem;
+}
+
+header[role="banner"] h1 {
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+
+/* Footer */
+.footer {
+  display: inline-block;
+  margin: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Navigation */
+nav {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  padding: 20px 20px 15px 20px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+}
+
+nav li {
+  padding-left: 0;
+  text-indent: 0;
+  margin-left: 0;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+nav a,
+nav a:visited {
+  color: var(--darkblue);
+  font-size: 0.55rem;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  border-radius: 20px;
+  font-weight: 400;
+  padding: 4px 8px;
+  margin-left: 0;
+  font-variation-settings: "wght" 700;
+  font-family: "Source Sans 3", sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+}
+
+/* Browser-specific fix for Safari */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    nav a {
+      font-weight: 400;
+    }
+  }
+}
+
+/* Content Layout */
+.content {
+  display: grid;
+  box-shadow: 0 0 164px 0 rgb(0 0 0 / 10%);
+  padding: 10px;
+  padding-left: 15px;
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+  margin: 20px;
+}
+
+.content-caption {
+  margin: 0 auto;
+  padding: 20px 0;
+  opacity: 0.9;
+  color: #333;
+  font-weight: 350;
+  font-variation-settings: "wght" 350;
+}
+
+.content-wrapper {
+  display: grid;
+  padding: 0 10px 0 15px;
+  margin: 0 auto;
+  max-width: 800px;
+  grid-gap: 20px;
+}

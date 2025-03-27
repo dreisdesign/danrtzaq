@@ -1,0 +1,244 @@
+/* Home and 404 Page Specific Styles */
+/* Version: 2025-03-10-v1
+body {
+  background-image: url('/assets/images/index/pattern-grayblue2.svg'), linear-gradient(45deg, rgb(160, 160, 244), rgb(160, 160, 244));
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 330px;
+  background-color: rgb(160, 160, 244);
+  background-blend-mode: color-burn;
+}
+
+
+
+*/
+
+.wrapper--home {
+  margin: 20px;
+  padding: 30px 10px 70px 10px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 164px 0 rgb(216 211 205 / 50%);
+  border-radius: 50px;
+  height: auto;
+  backdrop-filter: blur(5px);
+}
+
+.button--home {
+  width: fit-content;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 1em;
+  text-decoration: none;
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+  border-radius: 30px;
+  background-color: var(--darkblue);
+  color: white;
+  margin: 0 auto;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  display: block;
+}
+
+.button--home:hover,
+.button--home:focus,
+.button--home:active {
+  box-shadow: 0px 0px 0px 5px var(--darkblue);
+  background-color: var(--darkblue);
+  text-decoration: underline;
+  border-radius: 30px;
+  transition: all 0.1s ease-in;
+  color: white;
+  z-index: 1;
+  width: fit-content;
+}
+
+.button--404 {
+  background-color: var(--highlight-1);
+  color: var(--darkblue);
+  margin: 0 auto;
+  max-width: 200px;
+}
+
+.button--404:hover,
+.button--404:focus,
+.button--404:active {
+  box-shadow: 0px 0px 0px 5px var(--highlight-1);
+  background-color: var(--highlight-1);
+  text-decoration: underline;
+  border-radius: 30px;
+  transition: all 0.1s ease-in;
+  color: var(--darkblue);
+  z-index: 1;
+  width: fit-content;
+}
+
+.headline--home {
+  font-size: 3em;
+  line-height: 0.75em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 0.25rem;
+  letter-spacing: -3px;
+  font-weight: 900;
+  font-variation-settings: "wght" 900;
+}
+
+.subheadline--home {
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.image--home {
+  aspect-ratio: auto;
+  height: auto;
+  width: 100%;
+  min-width: 50px;
+  max-height: 125px;
+  transform-origin: 60% 70%;
+  animation: waveHand 2.5s ease-in-out;
+  will-change: transform;
+  object-fit: contain;
+}
+
+/* Hand wave animation */
+@keyframes waveHand {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Media queries for home page specific elements */
+@media screen and (min-width: 350px) {
+  .wrapper--home {
+    padding: 30px 10px 70px 10px;
+  }
+}
+
+@media screen and (min-width: 350px) and (min-height: 650px) {
+  .wrapper--home {
+    padding: 50px 20px;
+  }
+}
+
+@media screen and (min-width: 530px) {
+  .wrapper--home {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    grid-gap: 15px;
+  }
+
+  .button--home {
+    margin: 0;
+    display: inline-block;
+  }
+
+  .headline--home {
+    order: 1;
+    font-size: 3.7em;
+    line-height: 0.75em;
+    text-align: left;
+  }
+
+  .subheadline--home {
+    order: 2;
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 1.8em;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .button--home {
+    order: 3;
+    grid-column: 2;
+    grid-row: 3;
+    margin: 0;
+  }
+
+  .image--home {
+    order: 3;
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 12px;
+    max-height: 200px;
+  }
+
+  .image--home.featured--image {
+    max-width: 150px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-height: 600px) {
+  .headline--home {
+    font-size: 4.5em;
+  }
+
+  .wrapper--home {
+    margin-top: 50px;
+    padding: 50px;
+  }
+}
+
+@media screen and (min-width: 960px) and (min-height: 800px) {
+  .headline--home {
+    font-size: 5em;
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-height: 800px) {
+  .headline--home {
+    font-size: 6em;
+  }
+
+  .wrapper--home {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 1244px) {
+  .image--home.featured--image {
+    max-width: 250px;
+    width: 100%;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .image--home {
+    animation: none;
+  }
+}

@@ -1,0 +1,120 @@
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor directories and files
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Logs
+/dev/logs/
+*.log
+logs/
+log/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+/dev/env/
+
+# Backup files
+*.bak
+*.backup
+*.old
+/dev/backups/
+
+# Cache and temporary files
+.cache/
+.tmp/
+temp/
+tmp/
+
+# Compiled output
+dist/
+build/
+public_html.zip
+images.zip
+*.zip
+
+# Keys (but keep public keys)
+*_key
+!*_key.pub
+
+# Website-specific ignores
+# Asset Generation
+*.webp
+*-320w.*
+*-640w.*
+*-960w.*
+*-1200w.*
+*-1800w.*
+
+# Development
+*.html.tmp
+.cache/css-hash
+
+# Build and Output
+dist/
+build/
+public/
+
+# Archive
+_archive/
+
+# Additional project-specific ignores
+# Content scrape data
+/dev/content_scrape/
+
+# Process-Images temporary files
+/dev/Process-Images/temp/
+/dev/Process-Images/output/
+
+# Archived scripts
+/dev/_archived-scripts/
+
+# Web server specific files
+.well-known/
+cgi-bin/
+
+# Browser configuration
+browserconfig.xml
+site.webmanifest
+
+# Local server files
+/dev/server/logs/
+/dev/server/tmp/
+
+# Optional: Specific file types that might be generated
+*.min.css
+*.min.js
+*.map
+
+# Optional: Specific website content if needed
+# /postsforpause.com/images/
+# /public_html/images/

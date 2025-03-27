@@ -1,0 +1,40 @@
+DirectoryIndex index.html
+Options +FollowSymLinks
+RewriteEngine On
+
+# Basic error documents
+ErrorDocument 404 /404.html
+ErrorDocument 503 "Service temporarily unavailable"
+
+# Handle root URL and direct HTML requests
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_URI} !\.html$
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# Enable compression for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript
+</IfModule>
+
+# Force revalidation for SVGs
+<FilesMatch "\.svg$">
+    Header set Cache-Control "no-cache, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+    Header unset ETag
+    FileETag None
+</FilesMatch>
+
+# Allow caching for versioned files
+<FilesMatch "\.svg\?v=[0-9]+$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+

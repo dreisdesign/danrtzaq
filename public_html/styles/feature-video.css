@@ -1,0 +1,235 @@
+/**
+ * Feature: Video player styles
+ * Version: 1.1
+ * Last updated: 2025-03-17
+ */
+
+/* Common video container styles */
+.video-container {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* OVERLAY: Main video overlay - this is a semi-transparent layer covering the video */
+.video-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Allow clicks to pass through to the button */
+  border-radius: 10px;
+}
+
+/* OVERLAY PLAY BUTTON: Legacy play button created with ::after pseudo-element */
+.video-container .overlay::after {
+  content: "▶";
+  font-size: 3rem;
+  color: white;
+  opacity: 0.8;
+  transition: all 0.4s ease; /* Changed from opacity to all for smoother transitions */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto; /* Make the button itself clickable and hoverable */
+  cursor: pointer;
+}
+
+/* NEW PLAY BUTTON: Dedicated element for better hover control and accessibility */
+.video-container .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* NEW PLAY BUTTON: Play icon within the button */
+.video-container .play-button::after {
+  content: "▶";
+  font-size: 3rem;
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.4s ease;
+}
+
+/* NEW PLAY BUTTON: Hover state - grows in size and darkens */
+.video-container .play-button:hover {
+  width: 140px;
+  height: 140px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video-container .play-button:hover::after {
+  opacity: 1;
+}
+
+/* CLEANUP: Remove invalid selectors */
+.video-container .overlay::after:hover,
+html.safari .video-container .overlay::after:hover {
+  /* These selectors are invalid - removing them */
+  display: none;
+}
+
+/* OVERLAY: Hover effect */
+.video-container .overlay:hover::after {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+/* VIDEO: Standard video appearance */
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 1;
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* SAFARI SPECIFIC: Special handling for Safari browser */
+html.safari .video-container .overlay.safari-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+html.safari .video-container .overlay.safari-overlay::after {
+  opacity: 0.9;
+}
+
+/* SAFARI SPECIFIC: Hover styles for Safari - will be replaced by new play button */
+html.safari .video-container .overlay::after:hover {
+  opacity: 1;
+  width: 140px; /* Increased size */
+  height: 140px; /* Increased size */
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background */
+  -webkit-backdrop-filter: blur(4px) !important;
+  backdrop-filter: blur(4px) !important;
+  transition: all 0.4s ease;
+}
+
+html.safari .video-container .overlay:hover::after {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(4px) !important;
+  backdrop-filter: blur(4px) !important;
+  transition: all 0.4s ease;
+}
+
+/* STATE HANDLING: Controls for paused/playing states */
+.video-container.paused .overlay,
+.video-container .overlay[style*="block"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* CONTEXT SPECIFIC: Prevent duplicate play buttons in special containers */
+.carousel-slide .video-container .overlay::after,
+.content .video-container .overlay::after {
+  content: none;
+  display: none;
+}
+
+/* PAUSED STATE: Style for the paused state using legacy approach */
+.video-container.paused .overlay::after {
+  content: "▶";
+  display: flex;
+  /* Ensure it maintains the same styling as the original button */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* RESET STYLES: Prevent interference from other elements */
+.video-container::before,
+.video-container::after {
+  display: none !important;
+}
+
+/* CONSISTENCY: Ensure uniform styling in all contexts for legacy button */
+.video-container .overlay::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  font-size: 3rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Explicitly set blur here to prevent inheritance issues */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PLAYING STATE: Show pause icon briefly after starting playback */
+.video-container.playing .overlay {
+  pointer-events: none;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.5s ease;
+}
+
+.video-container.playing .overlay::after {
+  content: "❚❚"; /* Pause symbol */
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Fade out the overlay after delay */
+.video-container.playing.fade-out .overlay {
+  opacity: 0;
+}
+
+/* NEW PLAY BUTTON: Add pause state */
+.video-container.playing .play-button::after {
+  content: "❚❚"; /* Pause symbol */
+}
+
+.video-container.playing.fade-out .play-button {
+  opacity: 0;
+}
+
+/* OVERLAY TRANSITIONS: Ensure smooth transitions */
+.video-container .overlay,
+.video-container .play-button {
+  transition: opacity 0.5s ease;
+}

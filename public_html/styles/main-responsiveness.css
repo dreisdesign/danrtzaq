@@ -1,0 +1,306 @@
+/* Media Queries
+ * Contains: Responsive breakpoints and adaptations
+ * Version: 2024-03-11-v1
+ */
+
+/* Tiny Mobile (280px+) */
+@media (min-width: 280px) {
+  nav ul {
+    flex-direction: row;
+    gap: 12px;
+    margin: 0;
+    text-align: left;
+  }
+
+  nav {
+    max-width: 414px;
+  }
+
+  nav li {
+    padding: 0;
+  }
+}
+
+/* Small (350px+) */
+@media (min-width: 350px) {
+  /* Typography */
+  p,
+  li,
+  .results li {
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+
+  nav a {
+    font-size: 0.75rem;
+  }
+
+  /* Layout */
+  nav {
+    margin-top: 10px;
+  }
+
+  .piece--summary {
+    padding: 0px 10px 0px 15px;
+  }
+
+  .header--descriptions {
+    padding: 20px 0 0;
+    display: grid;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  /* Home specific */
+  .wrapper--home {
+    padding: 30px 10px 70px 10px;
+  }
+}
+
+/* Medium (530px+) */
+@media (min-width: 530px) {
+  /* Typography */
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  /* Layout */
+  header {
+    padding: 30px 20px 0;
+    margin-bottom: 1rem;
+  }
+
+  .footer {
+    margin: 20px auto;
+  }
+
+  /* Components */
+  .button--404-left {
+    margin: 0;
+  }
+
+  .button {
+    margin: 0;
+    display: inline-block;
+  }
+
+  /* Content */
+  .content-caption {
+    padding: 30px 30px 20px 30px;
+  }
+
+  /* Image styles */
+  .image--home.featured--image {
+    max-width: 150px;
+    width: 100%;
+  }
+
+  .image--home {
+    max-height: 200px;
+  }
+
+  /* Home specific */
+  .wrapper--home {
+    height: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+    grid-gap: 20px;
+  }
+
+  .headline--home {
+    order: 1;
+    font-size: 3.7em;
+    line-height: 0.75em;
+    text-align: left;
+  }
+
+  .subheadline--home {
+    order: 2;
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 1.8em;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .image--home {
+    order: 3;
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 12px;
+  }
+
+  /* Position the button properly in the grid */
+  .wrapper--home .button {
+    order: 4;
+    grid-column: 2;
+    grid-row: 3;
+    margin: 0;
+    justify-self: start;
+  }
+}
+
+/* Large (768px+) */
+@media (min-width: 768px) {
+  /* Typography */
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Layout */
+  header {
+    margin: 30px 0;
+    padding-top: 40px;
+    border-top: 10px solid var(--highlight-1);
+  }
+
+  .wrapper,
+  .piece--summary {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Home specific */
+  .headline--home {
+    font-size: 4.5em;
+  }
+
+  .wrapper--home {
+    margin-top: 50px;
+    padding: 50px;
+  }
+}
+
+/* X-Large (1244px+) */
+@media (min-width: 1244px) {
+  /* Typography */
+  h1 {
+    font-size: 3.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Layout */
+  .wrapper,
+  .piece--summary {
+    max-width: 960px;
+  }
+
+  .challenges {
+    padding-top: 15px;
+  }
+
+  .summary {
+    padding: 0 10px 0 15px;
+  }
+
+  /* Home specific */
+  .headline--home {
+    font-size: 5em;
+  }
+
+  .image--home.featured--image {
+    max-width: 250px;
+    width: 100%;
+  }
+}
+
+/* XX-Large (1200px+) */
+@media screen and (min-width: 1200px) and (min-height: 800px) {
+  .headline--home {
+    font-size: 6em;
+  }
+
+  .wrapper--home {
+    margin-top: 100px;
+  }
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  nav ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  nav li {
+    padding-bottom: 2px;
+  }
+
+  nav a {
+    padding: 2px 4px;
+  }
+}
+
+/* Grid Support */
+@supports (display: grid) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  h2 {
+    padding-bottom: 5px;
+    font-size: 1em;
+  }
+
+  @media (min-width: 350px) {
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  .content-caption,
+  .cards,
+  .piece--summary {
+    display: grid;
+    margin: 0 auto;
+  }
+
+  .cards {
+    grid-gap: 30px;
+  }
+
+  .card--details {
+    padding: 5px;
+  }
+}
+
+/* Safari-specific fixes for card images */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    /* Safari-only CSS for card images */
+    .cards .card img {
+      object-fit: contain !important;
+      height: auto !important;
+      max-height: 100% !important;
+    }
+
+    /* Ensure Next Project card matches portfolio index page cards */
+    .card picture,
+    .card picture img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}

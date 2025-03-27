@@ -1,0 +1,40 @@
+{
+  "name": "danrtzaq",
+  "version": "1.0.0",
+  "description": "Static file server with clean URLs",
+  "main": "dev/server/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "validate": "bash dev/scripts/validate.sh",
+    "prestart": "npm run validate",
+    "start": "node dev/server/server.js",
+    "start:all": "node dev/server/multi-server.js",
+    "start:posts": "node dev/server/server.js postsforpause.com",
+    "start:public": "node dev/server/server.js public_html",
+    "predeploy": "chmod +x dev/scripts/pre-deploy-check.sh && bash dev/scripts/pre-deploy-check.sh",
+    "deploy": "bash dev/scripts/deploy.sh",
+    "clean": "bash dev/scripts/clean-ds-store.sh",
+    "rotate-logs": "bash dev/scripts/rotate-logs.sh",
+    "guides": "code dev/guides/README.md",
+    "process-images": "node Dev/Process-Images/process-images.js",
+    "deploy-connect-all": "bash dev/scripts/ssh-connect-all.sh",
+    "deploy-hybrid": "bash dev/scripts/deploy-hybrid.sh",
+    "deploy-diagnose": "bash dev/scripts/ssh-diagnostics.sh",
+    "deploy-ftp-only": "bash dev/scripts/deploy-ftp-only.sh",
+    "gen-ssh-keys": "bash dev/scripts/gen-new-ssh-keys.sh",
+    "upload-key": "bash dev/scripts/upload-key-via-ftp.sh",
+    "cpanel-guide": "open dev/scripts/cpanel-ssh-guide.md",
+    "build:portfolio": "node dev/scripts/build-portfolio-json.js",
+    "format": "bash dev/scripts/format-files.sh"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "open": "^10.1.0",
+    "sharp": "^0.33.5",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "private": true
+}

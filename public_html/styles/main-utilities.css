@@ -1,0 +1,58 @@
+/* Utility Styles
+ * Contains: Helper classes, general-purpose utilities
+ * Version: 2024-03-11-v1
+ */
+
+/* Display utilities */
+.Hide {
+  display: none;
+}
+
+#target {
+  display: none;
+}
+
+/* Layout utilities */
+.max-width-sixty-percent {
+  max-width: 60%;
+  justify-self: center;
+}
+
+/* Summary section */
+.summary {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.piece--summary {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 30px 20px 10px 20px;
+}
+
+.piece--summary h2 {
+  padding-top: 1rem;
+}
+
+/* Content sections */
+.cards {
+  padding: 10px;
+}
+
+.results,
+.challenges {
+  margin-top: 15px;
+}
+
+.header--descriptions {
+  padding: 10px 0 0 0;
+  font-size: 0.8em;
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+}
+
+/* Interactive elements */
+#show-more-btn {
+  cursor: pointer;
+  margin-bottom: 30px;
+}

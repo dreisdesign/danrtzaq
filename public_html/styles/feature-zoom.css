@@ -1,0 +1,110 @@
+/* Zoomable Image Styles v1.2.0 */
+
+/* Base image state */
+.zoomable-image {
+  cursor: zoom-in;
+}
+
+/* Zoomed image positioning and dimensions */
+.zoomable-image.zoomed-in {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  max-width: calc(100% - 40px);
+  max-height: calc(100% - 40px);
+  z-index: 1000;
+  transform-origin: center;
+  user-select: none;
+  will-change: transform;
+  cursor: zoom-in;
+}
+
+/* State when image is zoomed to scale 2 */
+.zoomable-image.zoomed-in.zoomed-out {
+  transform: translate(-50%, -50%) scale(2);
+  cursor: zoom-out;
+}
+
+/* Cursor states for different zoom levels */
+.zoomable-image.zoomed-in[style*="scale(2)"],
+.zoomable-image.zoomed-in[style*="scale(3)"] {
+  cursor: move;
+  transition: none;
+}
+
+.zoomable-image.zoomed-in[style*="scale(2)"] {
+  cursor: grab;
+}
+
+/* Dark overlay with blur effect */
+.zoomable-image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Animation states */
+.zoomable-image-overlay.closing {
+  animation: fadeOut 0.2s ease-out forwards;
+}
+
+/* Fade animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Close button styling */
+.zoomable-image-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  transition: background-color 0.2s;
+}
+
+.zoomable-image-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .zoomable-image.zoomed-in {
+    cursor: default;
+  }
+}
