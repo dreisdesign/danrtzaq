@@ -4,6 +4,8 @@ This repository contains the development workspace and website files for [danrei
 
 ## Repository Structure
 
+This repository is organized to support both static site development and documentation.
+
 # Template System Documentation
 
 ## Overview
