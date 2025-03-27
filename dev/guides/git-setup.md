@@ -263,6 +263,38 @@ git remote add origin <repository-url>
 git push -u origin main  # or master, depending on your default branch
 ```
 
+## Publishing a Branch
+
+When working with a remote repository, you may need to publish your branch:
+
+### In VS Code:
+1. After creating a new branch locally, you'll see a cloud icon with an arrow in the status bar
+2. Click on "Publish Branch" to push the branch to the remote repository
+3. If this is the first time pushing to the remote, you'll be asked to select a remote repository
+
+![VS Code Publish Branch Button](https://code.visualstudio.com/assets/docs/editor/versioncontrol/git-branch-button.png)
+
+### Using Terminal:
+```bash
+# To push a branch for the first time and set up tracking
+git push -u origin <branch-name>
+
+# After the initial push, you can simply use
+git push
+```
+
+### What "Publish Branch" Does:
+- Creates the branch on the remote repository if it doesn't exist
+- Pushes your local commits to the remote branch
+- Sets up tracking so future pushes/pulls know where to go
+- Makes the branch visible to other collaborators
+
+### When to Publish a Branch:
+- When you want to back up your work on the remote
+- When you want to share your work with others
+- Before creating a pull request
+- When your branch is ready for review or deployment
+
 ## Daily Git Workflow
 ```bash
 # Before starting work
