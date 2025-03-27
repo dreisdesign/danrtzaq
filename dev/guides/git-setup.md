@@ -112,10 +112,108 @@ When you run `git add .` or use the "Stage All Changes" option in VS Code, the .
 4. **Local vs. Global ignores**: Your repository .gitignore affects everyone, while your personal ignores can be added to `~/.gitignore_global`
 5. **Hidden files**: Files starting with `.` (like .DS_Store) need to be explicitly ignored as they're hidden in Finder
 
-To set your global ignore file:
+### Global vs. Local .gitignore Files
+
+The command:
 ```bash
 git config --global core.excludesfile ~/.gitignore_global
 ```
+
+This sets up a global gitignore file that works **in addition to** (not instead of) your project's .gitignore:
+
+- **Will not cause issues with commits**: It simply adds more ignore patterns globally across all repositories
+- **Works alongside project .gitignore**: Both files will be used together
+- **Best for personal preferences**: Good for IDE-specific files or OS-specific files you want ignored everywhere
+- **Won't affect other users**: Only affects your local machine, not other people who clone your repository
+
+#### Creating a Global gitignore
+
+1. Create the file if it doesn't exist:
+   ```bash
+   touch ~/.gitignore_global
+   ```
+
+2. Edit it with your preferred editor:
+   ```bash
+   nano ~/.gitignore_global
+   ```
+
+3. Add common patterns for your personal environment:
+   ```
+   # IDE specific
+   .idea/
+   .vscode/
+   *.sublime-workspace
+
+   # Mac specific
+   .DS_Store
+   .AppleDouble
+   .LSOverride
+
+   # Thumbnail cache files
+   ._*
+   Thumbs.db
+   ```
+
+4. Save the file and set it as your global gitignore (the command you mentioned)
+   ```bash
+   git config --global core.excludesfile ~/.gitignore_global
+   ```
+
+This approach gives you the best of both worlds: repository-specific ignores in your project's .gitignore and personal ignores in your global file.
+
+## Writing Good Commit Messages
+
+When committing changes, you must provide a commit message. If you don't, Git will cancel the commit operation:
+
+1. **Keep it concise but descriptive**: Aim for less than 50 characters
+2. **Use imperative mood**: "Add feature" instead of "Added feature"
+3. **Start with a capital letter**: "Fix bug" not "fix bug"
+4. **Examples of good commit messages**:
+   - "Initial commit"
+   - "Add responsive navigation"
+   - "Fix CSS issue in Safari browser"
+   - "Update portfolio with new projects"
+   - "Refactor contact form validation"
+
+### In VS Code:
+1. Type your commit message in the text field above the checkmark button
+2. Hit ⌘+Enter or click the checkmark to commit
+3. If you forget the message, VS Code will show an error and allow you to try again
+
+### In Terminal:
+```bash
+# The -m flag is used to specify a message
+git commit -m "Your descriptive commit message here"
+
+# Without -m, Git will open your default editor to write a longer message
+git commit
+```
+
+### Understanding the Commit Editor Screen
+
+When you commit without the `-m` flag, Git opens an editor with text like this:
+
+```
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Changes to be committed:
+#       new file:   .gitignore
+#       new file:   dev/guides/git-setup.md
+#       modified:   dev/guides/README.md
+# ...
+```
+
+This is normal behavior:
+
+1. **Write your message at the top**: Type your commit message above all the comment lines (lines starting with #)
+2. **Comments are ignored**: All lines starting with # are just information and will be ignored
+3. **Save and exit**: In most editors, save and close the file to complete the commit
+   - In Vim: press `Esc`, type `:wq`, and press `Enter`
+   - In Nano: press `Ctrl+O` to save, `Enter` to confirm, then `Ctrl+X` to exit
+4. **Empty message aborts**: If you save with no message (only comments), the commit will be aborted
 
 ## Mac-Specific Git Tools
 
