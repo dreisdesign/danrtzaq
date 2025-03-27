@@ -130,3 +130,6 @@ site.webmanifest
 # Optional: Specific website content if needed
 # /postsforpause.com/images/
 # /public_html/images/
+
+# Ignore the dev folder
+dev/
