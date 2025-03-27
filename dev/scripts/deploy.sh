@@ -3,7 +3,7 @@
 # Deploy script for danreisdesign.com and postsforpause.com
 # This script deploys local changes to the remote server with backup and safety checks
 #
-# Usage: 
+# Usage:
 #   ./deploy.sh          # Regular deployment
 #   ./deploy.sh --dry-run  # Test run without making changes
 #
@@ -60,6 +60,14 @@ DRY_RUN_PREFIX=""
 echo "${DRY_RUN_PREFIX}=== Starting deployment at $(date) ==="
 [[ $DRY_RUN -eq 1 ]] && echo "DRY RUN MODE - No changes will be made"
 
+# Colors for terminal output
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+echo -e "${YELLOW}Starting deployment process...${NC}"
+
 # Backup function
 create_backup() {
     local dir=$1
@@ -73,7 +81,7 @@ create_backup() {
 format_html_files() {
   local dir=$1
   echo "Checking HTML formatting in $dir..."
-  
+
   # Find all HTML files
   find "$dir" -name "*.html" -type f -print0 | while IFS= read -r -d $'\0' file; do
     # Standardize indentation to 2 spaces
@@ -94,7 +102,7 @@ for local_dir in "${SITES[@]}"; do
         echo "Error: Required directory $local_dir not found!"
         exit 1
     fi
-    
+
     if [[ $DRY_RUN -eq 0 ]]; then
         # Format HTML files for consistent indentation
         format_html_files "$ROOT_DIR/$local_dir"
@@ -122,22 +130,22 @@ update_cache_busters() {
     local date_human=$(date '+%A, %B %d, %Y at %l:%M%p' | sed 's/  / /g')
     local files_changed=0
     local changes=()
-    
+
     echo "Updating cache busters and timestamps in $dir..."
-    
+
     # Find all HTML files
     while IFS= read -r file; do
         local rel_path="${file#$dir/}"
         local orig_hash=$(md5sum "$file" | cut -d' ' -f1)
         local temp_file=$(mktemp)
-        
+
         # Update multiple asset types
         sed -E \
             -e "s/(\.js|\.css|\.svg)\?v=[0-9]{8}-[0-9]{3,4}/\1?v=$timestamp/g" \
             -e "s/(\.js|\.css|\.svg)\"/\1?v=$timestamp\"/g" \
             -e "s/<!-- Last updated:.*-->/<!-- Last updated: $date_human -->/" \
             "$file" > "$temp_file"
-        
+
         # Only update if changes were made
         local new_hash=$(md5sum "$temp_file" | cut -d' ' -f1)
         if [ "$orig_hash" != "$new_hash" ]; then
@@ -148,19 +156,19 @@ update_cache_busters() {
             rm "$temp_file"
         fi
     done < <(find "$dir" -type f -name "*.html")
-    
+
     # Process CSS files to update @import statements
     while IFS= read -r file; do
         local rel_path="${file#$dir/}"
         local orig_hash=$(md5sum "$file" | cut -d' ' -f1)
         local temp_file=$(mktemp)
-        
+
         # Update @import statements in CSS files
         sed -E \
             -e "s/@import ['\"](.+\.css)['\"];/@import '\1?v=$timestamp';/g" \
             -e "s/@import ['\"](.+\.css)\?v=[0-9]{8}-[0-9]{3,4}['\"];/@import '\1?v=$timestamp';/g" \
             "$file" > "$temp_file"
-        
+
         # Only update if changes were made
         local new_hash=$(md5sum "$temp_file" | cut -d' ' -f1)
         if [ "$orig_hash" != "$new_hash" ]; then
@@ -171,7 +179,7 @@ update_cache_busters() {
             rm "$temp_file"
         fi
     done < <(find "$dir" -type f -name "*.css")
-    
+
     # Report changes in a cleaner format
     if [ ${#changes[@]} -gt 0 ]; then
         echo "Updated files:"
@@ -206,12 +214,12 @@ done
 validate_critical_files() {
     local dir=$1
     local site=$(basename "$dir")
-    
+
     echo "Validating critical files in $dir..."
-    
+
     # Common critical files for all sites
     local common_files=(".htaccess" "index.html")
-    
+
     # Site-specific critical files using case statement instead of associative array
     local site_files=""
     case "$site" in
@@ -222,7 +230,7 @@ validate_critical_files() {
             site_files="robots.txt"
             ;;
     esac
-    
+
     # Check common files
     for file in "${common_files[@]}"; do
         if [ ! -f "$dir/$file" ]; then
@@ -231,7 +239,7 @@ validate_critical_files() {
         fi
         echo "✓ Found $file"
     done
-    
+
     # Check site-specific files
     if [ -n "$site_files" ]; then
         for file in $site_files; do
@@ -251,41 +259,41 @@ validate_cache_busters() {
     local issues_found=0
     local warnings=()
     local validated=()
-    
+
     echo "Validating cache busters in $dir..."
-    
+
     while IFS= read -r file; do
         local rel_path="${file#$dir/}"
         local file_issues=0
-        
+
         # Check for required elements
         if grep -q "\.(js|css|svg)\"" "$file" && ! grep -q "\.(js|css|svg)?v=" "$file"; then
             warnings+=("$rel_path (missing asset versioning)")
             file_issues=1
         fi
-        
+
         if ! grep -q "<!-- Last updated:" "$file"; then
             warnings+=("$rel_path (missing timestamp)")
             file_issues=1
         fi
-        
+
         if [ $file_issues -eq 0 ]; then
             validated+=("$rel_path")
         fi
     done < <(find "$dir" -type f -name "*.html")
-    
+
     # Report results
     if [ ${#validated[@]} -gt 0 ]; then
         echo "Validated files:"
         printf '  ✓ %s\n' "${validated[@]}"
     fi
-    
+
     if [ ${#warnings[@]} -gt 0 ]; then
         echo "Warnings:"
         printf '  ⚠️  %s\n' "${warnings[@]}"
         return 1
     fi
-    
+
     return 0
 }
 
@@ -295,7 +303,7 @@ log_file_changes() {
     echo -e "\n=== File Changes Summary ==="
     echo "Modified HTML files:"
     find "$dir" -type f -name "*.html" -mmin -1 -ls
-    
+
     echo -e "\nModified CSS/JS files:"
     find "$dir" \( -name "*.css" -o -name "*.js" \) -mmin -1 -ls
 }
@@ -304,7 +312,7 @@ log_file_changes() {
 create_robots_txt() {
     local dir=$1
     local site=$(basename "$dir")
-    
+
     if [ ! -f "$dir/robots.txt" ]; then
         echo "Creating missing robots.txt for $site"
         cat > "$dir/robots.txt" << EOF
@@ -320,19 +328,19 @@ for i in "${!SITES[@]}"; do
     local_dir="${SITES[$i]}"
     remote_dir="${SITE_PATHS[$i]}"
     timestamp=$(date +%Y%m%d-%H%M)
-    
+
     echo -e "\n${DRY_RUN_PREFIX}=== Deploying $local_dir to $remote_dir ==="
-    
+
     # Add validation checks
     validate_critical_files "$ROOT_DIR/$local_dir"
-    
+
     # Create robots.txt if missing
     create_robots_txt "$ROOT_DIR/$local_dir"
-    
+
     # Update cache busters with validation
     update_cache_busters "$ROOT_DIR/$local_dir" "$timestamp"
     validate_cache_busters "$ROOT_DIR/$local_dir" "$timestamp"
-    
+
     # Create basic filter file
     FILTER_FILE=$(mktemp)
     cat > "$FILTER_FILE" << EOF
@@ -360,9 +368,9 @@ EOF
             rm "$FILTER_FILE"
             exit 1
         }
-    
+
     rm "$FILTER_FILE"
-    
+
     # Set permissions only if not in dry-run mode
     if [[ $DRY_RUN -eq 0 ]]; then
         echo "Setting permissions for $remote_dir"
@@ -372,7 +380,7 @@ EOF
                 exit 1
             }
     fi
-    
+
     # Add change logging
     log_file_changes "$ROOT_DIR/$local_dir"
 done
@@ -386,7 +394,7 @@ ssh -p $REMOTE_PORT "$REMOTE_USER@$REMOTE_HOST" '
             echo "Refreshed .htaccess in $dir";
         fi
     done
-    
+
     if [ -d "/home/danrtzaq/tmp/cache" ]; then
         rm -rf /home/danrtzaq/tmp/cache/*;
         echo "Server cache cleared";
@@ -438,3 +446,7 @@ open_websites
 echo "=== Deployment with cache invalidation completed at $(date) ==="
 echo "Log saved to $LOG_FILE"
 [[ $DRY_RUN -eq 1 ]] && echo "This was a dry run - no changes were made"
+
+echo -e "${GREEN}Deployment completed successfully!${NC}"
+echo -e "${YELLOW}REMINDER: Don't forget to commit your changes to GitHub.${NC}"
+echo -e "Use: git add . && git commit -m \"Update site with latest changes\" && git push"

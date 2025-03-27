@@ -1,10 +1,16 @@
+# Daniel Reis Design - Web Development Workspace
+
+This repository contains the development workspace and website files for [danreisdesign.com](https://danreisdesign.com) and [postsforpause.com](https://postsforpause.com).
+
+## Repository Structure
+
 # Template System Documentation
 
 ## Overview
 
 This templating system provides a flexible way to manage and display content across the website using Handlebars.js templates. The system separates data, templates, and logic for better maintainability and consistency.
 
-## How It Works 
+## How It Works
 
 The system consists of three main components:
 
@@ -77,7 +83,7 @@ Example implementation:
     </div>
     <picture>
       <!-- Responsive image code -->
-      <img src="{{baseImagePath}}.png" alt="{{alt}}" 
+      <img src="{{baseImagePath}}.png" alt="{{alt}}"
            loading="{{#if (eq priority 'high')}}eager{{else}}lazy{{/if}}" />
     </picture>
   </a>
@@ -382,7 +388,7 @@ window.addEventListener('load', function() {
             '/assets/images/about/headshot',
             'Headshot photo'
         );
-        
+
         // Render into container
         TemplateHandler.renderImage(profileImage, 'profile-picture-container');
     }
@@ -395,9 +401,9 @@ window.addEventListener('load', function() {
 {{#each projects}}
   <div class="project">
     <h2>{{title}}</h2>
-    {{> responsive-image 
-        basePath=imagePath 
-        alt=imageAlt 
+    {{> responsive-image
+        basePath=imagePath
+        alt=imageAlt
         priority="normal"
         width="1200"
         height="900"
@@ -446,16 +452,16 @@ To add a new responsive image to your site:
      width: 1200,
      height: 900
    });
-   
+
    // Render the image into the container
    TemplateHandler.renderImage(myImage, 'project-image-container');
-   
+
    // Or use a pre-configured type
    const cardImage = ImageHelper.types.portfolioCard(
      '/assets/images/portfolio/new-project/cover',
      'New project cover image'
    );
-   
+
    TemplateHandler.renderImage(cardImage, 'card-container');
    ```
 
@@ -473,13 +479,13 @@ To add a new responsive image to your site:
        sizes: '100vw'
      });
    };
-   
+
    // Use your custom type
    const heroImage = ImageHelper.types.heroImage(
      '/assets/images/projects/hero',
      'Project hero banner'
    );
-   
+
    TemplateHandler.renderImage(heroImage, 'hero-section');
    ```
 
@@ -525,7 +531,7 @@ To replace an existing image (like the about page headshot) while maintaining re
        '/assets/images/about/headshot',
        'dan reis headshot'
      );
-     
+
      // To this:
      const profileImage = ImageHelper.types.profilePhoto(
        '/assets/images/about/headshot?v=20250505', // Add version timestamp
@@ -541,11 +547,11 @@ To replace an existing image (like the about page headshot) while maintaining re
      '/assets/images/about/headshot',
      'dan reis headshot'
    );
-   
+
    // Override dimensions if needed
    profileImage.width = 1500;  // New width
    profileImage.height = 2000; // New height
-   
+
    // Render with new dimensions
    TemplateHandler.renderImage(profileImage, 'profile-picture-container');
    ```
@@ -565,4 +571,3 @@ To prevent Flash of Unstyled Content (FOUC), ensure that your CSS is loaded befo
   <!-- Page content -->
 </body>
 ```
-

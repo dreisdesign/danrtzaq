@@ -371,6 +371,48 @@ If you prefer a graphical interface instead of the command line:
 5. **Backup database separately** - Git is for code, not data
 6. **Document deployment process** - Include instructions for server deployment
 
+## Separating Version Control from Deployment
+
+### Is It Normal to Commit to GitHub and Separately Deploy My Site?
+
+Yes, this is not only normal but considered a best practice for modern web development! This approach is known as a "deployment pipeline" and offers several advantages:
+
+1. **Source Control vs. Production Separation**:
+   - Your Git repository serves as your source of truth and version control
+   - Your production server contains only what's needed to run the site
+   - This separation creates a cleaner workflow and better security
+
+2. **Common Deployment Workflows**:
+
+   a) **Basic GitHub + Manual Deploy** (Your Current Setup)
+   ```
+   Local Changes → Commit to Git → Push to GitHub → Run Deploy Script
+   ```
+
+   b) **Continuous Integration/Continuous Deployment (CI/CD)**
+   ```
+   Local Changes → Commit to Git → Push to GitHub → Automated Tests → Automated Deployment
+   ```
+
+3. **Benefits of Your Approach**:
+   - **Control**: You decide exactly when to deploy changes
+   - **Testing**: You can test changes locally before deploying
+   - **Selective deployment**: You can choose to deploy only specific changes
+   - **Rollback capability**: Easy to revert to previous versions if needed
+   - **Security**: Keeps sensitive deployment details separate from code
+
+4. **Enhancement Options**:
+   - Consider adding pre-deploy testing to your deployment script
+   - Implement staging environments for testing before production
+   - Add post-deployment verification
+
+5. **Common Tools for This Workflow**:
+   - GitHub Actions (for automation)
+   - Jenkins, CircleCI, or Travis CI (for CI/CD)
+   - Netlify or Vercel (for automatic deployment from Git)
+
+Your current workflow with a separate deploy script is consistent with professional web development practices and provides a good foundation that can be enhanced as your needs grow.
+
 ## Sensitive Files and Security
 
 ### Should .htaccess Be in Your Public Repo?
