@@ -5,17 +5,17 @@
  */
 
 /* Core modules */
-@import 'main-base.css?v=20250327-1124';
-@import 'main-layout.css?v=20250327-1124';
-@import 'main-components.css?v=20250327-1124';
-@import 'main-animations.css?v=20250327-1124';
-@import 'main-utilities.css?v=20250327-1124';
-@import 'main-responsiveness.css?v=20250327-1124';
+@import 'main-base.css?v=20250327-1127';
+@import 'main-layout.css?v=20250327-1127';
+@import 'main-components.css?v=20250327-1127';
+@import 'main-animations.css?v=20250327-1127';
+@import 'main-utilities.css?v=20250327-1127';
+@import 'main-responsiveness.css?v=20250327-1127';
 
 /* Content layouts */
-@import 'content-card.css?v=20250327-1124';
+@import 'content-card.css?v=20250327-1127';
 
 /* Features */
-@import 'feature-zoom.css?v=20250327-1124';
-@import 'feature-video.css?v=20250327-1124';
-@import 'feature-carousel.css?v=20250327-1124';
+@import 'feature-zoom.css?v=20250327-1127';
+@import 'feature-video.css?v=20250327-1127';
+@import 'feature-carousel.css?v=20250327-1127';
