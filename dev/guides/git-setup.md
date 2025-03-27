@@ -370,3 +370,96 @@ If you prefer a graphical interface instead of the command line:
 4. **Test before committing** - Ensure your website works before committing changes
 5. **Backup database separately** - Git is for code, not data
 6. **Document deployment process** - Include instructions for server deployment
+
+## Sensitive Files and Security
+
+### Should .htaccess Be in Your Public Repo?
+
+#### General Guidelines:
+
+1. **Basic .htaccess** files that handle:
+   - URL rewrites
+   - Error pages
+   - Content type definitions
+   - Cache control
+   - Basic redirects
+
+   ✅ **CAN be included in your repository** as they don't contain sensitive information.
+
+2. **Sensitive .htaccess** files that contain:
+   - Authentication credentials (AuthUserFile paths, etc.)
+   - IP restriction lists for your specific environment
+   - Absolute file paths specific to your server
+   - API keys or tokens
+   - Environment-specific settings
+
+   ❌ **SHOULD NOT be included** in public repositories.
+
+### Best Practices for .htaccess:
+
+1. **Use templates**: Store a sanitized template version in your repo
+2. **Use environment variables**: For sensitive information
+3. **Keep sensitive sections separate**: Use Include directives to load private configs
+4. **Document required changes**: Add comments explaining what needs to be configured
+
+### Example Approach:
+
+```bash
+# In your repo: .htaccess-template
+RewriteEngine On
+RewriteRule ^api/ api/index.php [L]
+# SENSITIVE: Add authentication settings below for production
+
+# In your .gitignore
+/public_html/.htaccess
+/postsforpause.com/.htaccess
+
+# During deployment, copy and customize:
+cp .htaccess-template public_html/.htaccess
+# Then add sensitive information
+```
+
+For your specific projects, review your current .htaccess files to determine if they contain any sensitive information before deciding whether to include them in your repository.
+
+## Security Analysis of Your Public Repository
+
+I've reviewed your GitHub repository at https://github.com/dreisdesign/danrtzaq, and here are my findings:
+
+### Sensitive Files Found:
+
+1. **Public .htaccess files**:
+   - The .htaccess files in your repo appear to be basic configuration files without sensitive credentials.
+   - They contain only standard rewrite rules, error document settings, and cache controls.
+   - ✅ **VERDICT**: These specific .htaccess files are safe to keep public.
+
+2. **Potential sensitive information**:
+   - Your `public_html/assets/js/contact-form.js` contains references to form processing but doesn't expose API keys.
+   - There are no visible database credentials in your repository.
+   - There don't appear to be any API keys or tokens committed to the repository.
+
+### Recommended Actions:
+
+1. **Remove or update SSH public key**:
+   - The file `danreis_key.pub` is a public SSH key, which by itself isn't highly sensitive
+   - However, best practice is to not include SSH keys in repositories
+   - Consider removing this file from the repo and adding `*_key.pub` to your .gitignore
+
+2. **Private information in commit history**:
+   - If you've previously committed sensitive data that was later removed, it may still be in your Git history
+   - Consider using `git filter-branch` or the BFG Repo-Cleaner if you need to purge sensitive data from history
+
+3. **Review deployment scripts**:
+   - Your deployment scripts in `dev/scripts/` should be checked to ensure they don't contain hardcoded credentials
+   - Consider using environment variables for any sensitive information in these scripts
+
+4. **Add more specific exclusions to .gitignore**:
+   - Add patterns to exclude any potential config files that might contain credentials:
+     ```
+     **/config.php
+     **/wp-config.php
+     **/*config*.json
+     **/*.pem
+     **/*.key
+     ```
+
+Overall, your repository appears to be reasonably secure with no obvious exposure of credentials or sensitive information in the current files.

@@ -27,26 +27,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function getLargestImage(img) {
     // Try to get base image URL without size suffix
-    const basePath = img.src.replace(/-\d+w\.(jpe?g|png|webp)/, ".$1");
+    const basePath = img.src.replace(/-\d+w\.(png|webp)/, ".$1");
 
-    // Try formats in order of preference (original, png, jpg, webp)
+    // Only try formats that are actually used on your site (png and webp)
     const formats = [
       basePath,
-      basePath.replace(/\.(jpe?g|png|webp)$/, ".png"),
-      basePath.replace(/\.(jpe?g|png|webp)$/, ".jpg"),
-      basePath.replace(/\.(jpe?g|png|webp)$/, ".webp"),
+      basePath.replace(/\.(png|webp)$/, ".png"),
+      basePath.replace(/\.(png|webp)$/, ".webp"),
     ];
+
+    // Log the paths we're trying (for debugging)
+    console.log("Trying to find high-res image from:", formats);
 
     // Try each format
     for (const path of formats) {
       const testImg = new Image();
       testImg.src = path;
       if (testImg.complete) {
+        console.log("Found high-res image:", path);
         return path;
       }
     }
 
     // If no higher quality version found, use original src
+    console.log("Using original image source:", img.src);
     return img.src;
   }
 

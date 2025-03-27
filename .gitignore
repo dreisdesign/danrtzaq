@@ -62,9 +62,15 @@ public_html.zip
 images.zip
 *.zip
 
-# Keys (but keep public keys)
+# Keys and credentials
 *_key
-!*_key.pub
+*_key.pub
+*.pem
+*.key
+**/config.php
+**/wp-config.php
+**/*config*.json
+**/*.htpasswd
 
 # Website-specific ignores
 # Asset Generation
@@ -114,6 +120,12 @@ site.webmanifest
 *.min.css
 *.min.js
 *.map
+
+# Sensitive configuration files
+*auth*.json
+*secrets*.json
+*credentials*.json
+*token*.json
 
 # Optional: Specific website content if needed
 # /postsforpause.com/images/
